@@ -1,0 +1,40 @@
+{
+  "name": "netofficefw.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "description": "netoffice.io website source code",
+  "homepage": "https://github.com/NetOfficeFw/netofficefw.github.io",
+  "license": {
+    "type": "MIT"
+  },
+  "keywords": [
+    "NetOfficeFw",
+    "NetOffice",
+    "website"
+  ],
+  "author": "Jozef Izso <jozef.izso@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/NetOfficeFw/netofficefw.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NetOfficeFw/netofficefw.github.io.git"
+  },
+  "engines": {
+    "node": "0.10",
+    "npm": "2.1"
+  },
+  "dependencies": {
+    "docpad": "~6.69.0",
+    "docpad-plugin-eco": "~2.1.0",
+    "docpad-plugin-marked": "~2.2.1",
+    "docpad-plugin-partials": "~2.9.1"
+  },
+  "devDependencies": {
+    "docpad-plugin-livereload": "~2.6.0"
+  },
+  "main": "node_modules/docpad/bin/docpad-server",
+  "scripts": {
+    "docpad": "docpad run"
+  }
+}
