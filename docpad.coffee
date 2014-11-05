@@ -9,6 +9,12 @@ docpadConfig = {
   templateData:
     site:
       url: "http://neoffice.io"
+
+  plugins:
+    # deploy to Github pages in repository netofficefw.github.io
+    ghpages:
+        deployRemote: 'origin'
+        deployBranch: 'master'
 }
 
 # Export the DocPad Configuration
