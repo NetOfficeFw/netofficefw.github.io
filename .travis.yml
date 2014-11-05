@@ -1,0 +1,19 @@
+language: node_js
+node_js: '0.10'
+
+branches:
+  only:
+    - develop
+
+before_script:
+  - export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"
+  - "./scripts/prebuild.sh"
+script:
+  - docpad deploy-ghpages --env static
+
+env:
+  global:
+    - GH_REPO="NetOfficeFw/netofficefw.github.io"
+    - GIT_NAME="Travis CI"
+    - GIT_EMAIL="travis@travis-ci.org"
+    - secure: "VuMyVOkWPtwzwRiCnueuSWvMlALFyJc+PcJnDBGOrvhVHq8oZhWs85x0UaPE4hdpO2yO9HTSJrROaWN/oYX435NYc4k0O2Z5q7FI0Fl+PmDcgEsZkJ6HKqsPGJW7FGBJLwI/4J9a+AzHPnr9Tpps41evserJeB6GyscRFNMeqrc="
