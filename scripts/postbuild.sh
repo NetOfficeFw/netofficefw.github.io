@@ -15,6 +15,7 @@ git config user.name "$GIT_NAME"
 git add --all
 git commit --message "$COMMIT_MESSAGE" --author "$COMMIT_AUTHOR"
 
+echo "Publishing updated website"
 git push --quiet $REPO_URL $GHPAGES_BRANCH
 
 cd ..
