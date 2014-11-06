@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # get last commit message
-$COMMIT_MESSAGE=$(git log -1 --oneline)
-$COMMIT_AUTHOR=$(git log -1 --pretty=format:"%an <%ae>")
+COMMIT_MESSAGE=$(git log -1 --oneline)
+COMMIT_AUTHOR=$(git log -1 --pretty=format:"%an <%ae>")
 
 cd out
 
