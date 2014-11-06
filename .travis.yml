@@ -8,11 +8,16 @@ branches:
 before_script:
   - export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"
   - "./scripts/prebuild.sh"
+
 script:
-  - docpad deploy-ghpages --env static
+  - docpad generate --env static
+
+after_script:
+  - "./scripts/postbuild.sh"
 
 env:
   global:
+    - GHPAGES_BRANCH=master
     - GH_REPO="NetOfficeFw/netofficefw.github.io"
     - GIT_NAME="Travis CI"
     - GIT_EMAIL="travis@travis-ci.org"
