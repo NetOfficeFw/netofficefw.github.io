@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Outlook Security | NetOffice Framework </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Outlook Security | NetOffice Framework ">
+    <meta name="generator" content="docfx 2.3.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+              <h1 id="outlook-security">Outlook Security</h1>
+              
+<h2 id="what-can-the-outlook-security-do-for-you">What can the Outlook Security do for you?</h2>
+<p>When you automate Microsoft Outlook via COM then you or your users are maybe
+presented with a dialog which is asking to authorize this access. If this dialog
+is shown depends on which part of Outlooks object-model you want to access.
+Among others, specific contact data and sending/receiving mails are protected.
+Depending on the type and frequency of the access this can get rather annoying
+and also prevents unattended automation (Microsoft discourages unattended
+automation of Office application, but it is done in reality anyway). The Outlook
+Security Component suppresses this dialog for you and makes -reduced stress
+level apart- automated testing of your addin possible.  Along with the
+introduction of this security feature in 2002, a tool named &quot;ClickYes&quot; gained
+popularity among Outlook developers. This tool runs in the background and
+automatically confirms the security dialog.  The Outlook Security Component
+works in principle just like &quot;ClickYes&quot; and confirms the dialog automatically.
+One advantage of Outlook Security in comparison to &quot;ClickYes&quot; is that Outlook
+Security does not need to be installed on the target system. The functionality
+is located in the assembly NetOffice.OutlookSecurity.dll. How your Component can
+utilize this assembly to provide its own ClickYes-functionality is described
+below. Remark: Outlook offers -depending on the version- some options to not
+show dialog for you assembly. Check these options before you decide to use
+Outlook Security.</p>
+<p><img src="assets/OutlookSecurity.png" alt="Toolbox - Outlook Security"></p>
+<h2 id="functionality-and-settings">Functionality and Settings</h2>
+<p>You can active Outlook Security with the checkbox &#39;Supress enabled&#39;. At the
+bottom you can find a protocol with the recent actions.</p>
+<h2 id="using-netoffice-outlooksecurity-dll-in-your-own-assemblies">Using NetOffice.OutlookSecurity.dll in your own assemblies.</h2>
+<p>Integrate the assembly with &#39;Links&#39; in your project or copy the source-code into
+your project. You can find the assembly in the application-folder of the
+NetOffice Developer Toolbox. The soure-code is located in the folder &quot;Source&quot;.
+The activation is really easy:</p>
+<h3 id="example-activation-in-c">Example-activation in C</h3>
+<pre><code class="lang-csharp">public void Foo()
+{
+    NetOffice.OutlookSecurity.Supress.Enabled = true;
+}
+</code></pre><p>Please make sure that you deactivate this functionality again when your program
+ends.</p>
+
+            </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+            <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+            </nav>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2016 NetOffice Framework.<br>Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0<a></a>.
+            
+          </a></div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
