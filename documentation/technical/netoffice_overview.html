@@ -5,17 +5,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Invoker | NetOffice Framework </title>
+    <title>Technical Documentation | NetOffice Framework </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Invoker | NetOffice Framework ">
+    <meta name="title" content="Technical Documentation | NetOffice Framework ">
     <meta name="generator" content="docfx 2.3.1.0">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
     
   </head>
   <body data-spy="scroll" data-target="#affix">
@@ -31,8 +31,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -63,36 +63,53 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="tutorial07_csharp">
-              <h1 id="invoker">Invoker</h1>
+            <article class="content wrap" id="_content" data-uid="">
+              <h1 id="technical-documentation">Technical Documentation</h1>
               
-<p>The static class LateBindingApi.Core.Invoker is the low level interface from
-NetOffice to access a COM Server. This example shows you an example how to use it.</p>
-<p>See reference chapter4 in technical documentation for further info.</p>
-<pre><code class="lang-csharp">private void Tutorial07Main()
-{
-    // Initialize Api COMObject Support
-    LateBindingApi.Core.Factory.Initialize();
-
-    Excel.Application application = new Excel.Application();
-    application.DisplayAlerts = false;
-    application.Workbooks.Add();
-
-    Excel.Worksheet sheet = (Excel.Worksheet)application.Workbooks[1].Worksheets[1];
-    Excel.Range sampleRange = sheet.Cells[1, 1];
-
-    // we set the COMVariant ColorIndex from Font of ouer sample range
-    // with the invoker class
-    Invoker.PropertySet(sampleRange.Font, &quot;ColorIndex&quot;, 1);
-
-    // creates a native unmanaged ComProxy with the invoker
-    object comProxy = Invoker.PropertyGet(application, &quot;Workbooks&quot;);
-    Marshal.ReleaseComObject(comProxy);
-
-    application.Quit();
-    application.Dispose();
-}
-</code></pre><p><a href="tutorial08.html">Tutorial 8: Check for a specific entity support at runtime</a></p>
+<h2 id="netoffice-namespace-overview">NetOffice Namespace Overview</h2>
+<p>All NetOffice Assemblies are structured into the namespaces which are listed in the following table.
+As example serve the assemblies of OfficeApi.dll</p>
+<table>
+<thead>
+<tr>
+<th>Data Types</th>
+<th>Namespace</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>OfficeApi</td>
+<td>Contains all directly and indirectly instantiable reference types</td>
+</tr>
+<tr>
+<td>Enums</td>
+<td>OfficeApi.Enums</td>
+<td>Enums, represented in NetOffice by the equivalent type enum</td>
+</tr>
+<tr>
+<td>Constants</td>
+<td>OfficeApi.Constants</td>
+<td>Constants, represented in NetOffice by static classes with public fields</td>
+</tr>
+<tr>
+<td>Structs</td>
+<td>OfficeApi.Structs</td>
+<td>Records, represented in NetOffice by the equivalent valuetype struct</td>
+</tr>
+<tr>
+<td>Modules</td>
+<td>OfficeApi.Modules</td>
+<td>Modules, represented in NetOffice by static classes</td>
+</tr>
+<tr>
+<td>Utils</td>
+<td>OfficeApi.Utils</td>
+<td>for internal use by NetOffice</td>
+</tr>
+</tbody>
+</table>
 
             </article>
           </div>
@@ -119,9 +136,9 @@ NetOffice to access a COM Server. This example shows you an example how to use i
       </footer>
     </div>
     
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

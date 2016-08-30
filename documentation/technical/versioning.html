@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Technical Documentation | NetOffice Framework </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Technical Documentation | NetOffice Framework ">
+    <meta name="generator" content="docfx 2.3.1.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+              <h1 id="technical-documentation">Technical Documentation</h1>
+              
+<h2 id="version-independent-programming">Version independent programming</h2>
+<p>Given the fact that NetOffice supports all recent versions of Office, a
+mechanism for determining at designtime and runtime which versions support the
+functionality in question is needed. Therefore, all entities in NetOffice are
+annotated with the SupportByLibrary attribute and XML source documentation. Take
+a look at the following code excerpt:</p>
+<pre><code class="lang-csharp">///&lt;summary&gt;
+/// DispatchInterface _Application SupportByLibrary Excel, 09,10,11,12,14
+///&lt;/summary&gt;
+[SupportByLibrary(&quot;Excel&quot;, 09,10,11,12,14)]
+[EntityTypeAttribute(EntityType.IsDispatchInterface)]
+public class _Application : COMObject
+{
+    /// &lt;summary&gt;
+    /// SupportByLibrary Excel 09, 10, 11, 12, 14
+    /// &lt;/summary&gt;
+    [SupportByLibrary(&quot;Excel&quot;, 09,10,11,12,14)]
+    public bool Visible { get; set; }
+
+    /// &lt;summary&gt;
+    /// SupportByLibrary Excel 12, 14
+    /// &lt;/summary&gt;
+    [SupportByLibrary(&quot;Excel&quot;, 12,14)]
+    public bool EnableLivePreview { get; set; }
+
+    /// &lt;summary&gt;
+    /// SupportByLibrary Excel 14
+    /// &lt;/summary&gt;
+    [SupportByLibrary(&quot;Excel&quot;, 14)]
+    public bool PrintCommunication { get; set; }
+}
+</code></pre><p>You can see that the class _Application is present in all supported versions,
+just like its property Visible. The property EnableLivePreview is only offered
+in versions 12 and 14, the property PrintCommunication only in version 14. All
+Classes, Properties, Methoden, Enums, Enum Values, etc. are annotated this way.
+When you have created an assembly which is using NetOffice, you can check your
+assembly with the tool NetOffice.DeveloperToolbox with which Office versions
+your assembly is compatible.</p>
+<p>Following you can see an Overview of the different version attributes.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Version</th>
+<th>Attribute</th>
+<th>Type Library</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Office</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Office 2000</td>
+<td>09</td>
+<td>Microsoft Office   9.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Office 2002</td>
+<td>10</td>
+<td>Microsoft Office  10.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Office 2003</td>
+<td>11</td>
+<td>Microsoft Office  11.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Office 2007</td>
+<td>12</td>
+<td>Microsoft Office  12.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Office 2010</td>
+<td>14</td>
+<td>Microsoft Office  14.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Excel</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Excel 2000</td>
+<td>09</td>
+<td>Microsoft Excel  9.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Excel 2002</td>
+<td>10</td>
+<td>Microsoft Excel  10.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Excel 2003</td>
+<td>11</td>
+<td>Microsoft Excel  11.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Excel 2007</td>
+<td>12</td>
+<td>Microsoft Excel  12.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Excel 2010</td>
+<td>14</td>
+<td>Microsoft Excel  14.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Word</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Word 2000</td>
+<td>09</td>
+<td>Microsoft Word  9.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Word 2002</td>
+<td>10</td>
+<td>Microsoft Word 10.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Word 2003</td>
+<td>11</td>
+<td>Microsoft Word 11.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Word 2007</td>
+<td>12</td>
+<td>Microsoft Word 12.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Word 2010</td>
+<td>14</td>
+<td>Microsoft Word 14.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Outlook</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Outlook 2000</td>
+<td>09</td>
+<td>Microsoft Outlook  9.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Outlook 2002</td>
+<td>10</td>
+<td>Microsoft Outlook 10.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Outlook 2003</td>
+<td>11</td>
+<td>Microsoft Outlook 11.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Outlook 2007</td>
+<td>12</td>
+<td>Microsoft Outlook 12.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Outlook 2010</td>
+<td>14</td>
+<td>Microsoft Outlook 14.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PowerPoint</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>PowerPoint 2000</td>
+<td>09</td>
+<td>Microsoft PowerPoint  9.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>PowerPoint 2002</td>
+<td>10</td>
+<td>Microsoft PowerPoint 10.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>PowerPoint 2003</td>
+<td>11</td>
+<td>Microsoft PowerPoint 11.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>PowerPoint 2007</td>
+<td>12</td>
+<td>Microsoft PowerPoint 12.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>PowerPoint 2010</td>
+<td>14</td>
+<td>Microsoft PowerPoint 14.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Access</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Access 2000</td>
+<td>09</td>
+<td>Microsoft Access  9.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Access 2002</td>
+<td>10</td>
+<td>Microsoft Access 10.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Access 2003</td>
+<td>11</td>
+<td>Microsoft Access 11.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Access 2007</td>
+<td>12</td>
+<td>Microsoft Access 12.0 Object Library</td>
+</tr>
+<tr>
+<td></td>
+<td>Access 2010</td>
+<td>14</td>
+<td>Microsoft Access 14.0 Object Library</td>
+</tr>
+<tr>
+<td>MSFormsApi.dll</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>VisioApi.dll</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>OfficeApi.dll</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>VBIDEApi.dll</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>NetOffice.dll</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+            </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+            <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+            </nav>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2016 NetOffice Framework.<br>Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0<a></a>.
+            
+          </a></div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

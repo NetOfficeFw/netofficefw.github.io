@@ -5,17 +5,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Invoker | NetOffice Framework </title>
+    <title>Technical Documentation | NetOffice Framework </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Invoker | NetOffice Framework ">
+    <meta name="title" content="Technical Documentation | NetOffice Framework ">
     <meta name="generator" content="docfx 2.3.1.0">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
     
   </head>
   <body data-spy="scroll" data-target="#affix">
@@ -31,8 +31,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -63,36 +63,36 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="tutorial07_csharp">
-              <h1 id="invoker">Invoker</h1>
+            <article class="content wrap" id="_content" data-uid="">
+              <h1 id="technical-documentation">Technical Documentation</h1>
               
-<p>The static class LateBindingApi.Core.Invoker is the low level interface from
-NetOffice to access a COM Server. This example shows you an example how to use it.</p>
-<p>See reference chapter4 in technical documentation for further info.</p>
-<pre><code class="lang-csharp">private void Tutorial07Main()
+<h2 id="unknown-and-variant-types">Unknown and variant types</h2>
+<p>Any office application use the datatype Variant which has its roots in Visual
+Basic for Applications (VBA). This datatype can -at runtime- be any other type,
+but it is not supported most of the .NET languages. The datatype Variant is
+replaced by the simple basetype object in NetOffice. This does not mean that you
+loose some type-safety or COM proxy management. As long as the Variant type is a
+COM proxy at runtime, you get the corresponding wrapper class from NetOffice,
+otherwise the respective scalar type, e.g. <code>bool</code> or <code>int</code>. Take a look at the
+following code example:</p>
+<pre><code class="lang-csharp">// the property Selection from Excel.Application is defined as Variant and in NetOffice as object
+// It can have multiple types at runtime what is currently selected, a worksheet, a range, a window or other
+if (application.Selection is Excel.Worksheet)
 {
-    // Initialize Api COMObject Support
-    LateBindingApi.Core.Factory.Initialize();
-
-    Excel.Application application = new Excel.Application();
-    application.DisplayAlerts = false;
-    application.Workbooks.Add();
-
-    Excel.Worksheet sheet = (Excel.Worksheet)application.Workbooks[1].Worksheets[1];
-    Excel.Range sampleRange = sheet.Cells[1, 1];
-
-    // we set the COMVariant ColorIndex from Font of ouer sample range
-    // with the invoker class
-    Invoker.PropertySet(sampleRange.Font, &quot;ColorIndex&quot;, 1);
-
-    // creates a native unmanaged ComProxy with the invoker
-    object comProxy = Invoker.PropertyGet(application, &quot;Workbooks&quot;);
-    Marshal.ReleaseComObject(comProxy);
-
-    application.Quit();
-    application.Dispose();
+    Excel.Worksheet sheet = (Excel.Worksheet)application.Selection;
 }
-</code></pre><p><a href="tutorial08.html">Tutorial 8: Check for a specific entity support at runtime</a></p>
+else if (application.selection is Excel.Range)
+{
+    Excel.Range range = (Excel.Range)application.Selection;
+}
+else if (!application.selection is COMObject)
+{
+    // selection is no COM Object means a native scalar type like bool or int
+}
+</code></pre><h3 id="related-tutorials">Related tutorials</h3>
+<ol>
+<li><a class="xref" href="../../tutorials/tutorial06.html#tutorial06_csharp">Tutorial06</a></li>
+</ol>
 
             </article>
           </div>
@@ -119,9 +119,9 @@ NetOffice to access a COM Server. This example shows you an example how to use i
       </footer>
     </div>
     
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

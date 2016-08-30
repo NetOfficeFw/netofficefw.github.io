@@ -1,3 +1,27 @@
 ### YamlMime:XRefMap
 sorted: true
-references: []
+references:
+- uid: tutorial01_csharp
+  name: Understand COM Proxy Managemen...
+  href: tutorials/tutorial01.html#tutorial01_csharp
+- uid: tutorial02_csharp
+  name: Efficient using Dispose & Disp...
+  href: tutorials/tutorial02.html#tutorial02_csharp
+- uid: tutorial03_csharp
+  name: Using Dispose with event expor...
+  href: tutorials/tutorial03.html#tutorial03_csharp
+- uid: tutorial04_csharp
+  name: Observable COM Proxy Count
+  href: tutorials/tutorial04.html#tutorial04_csharp
+- uid: tutorial05_csharp
+  name: Understanding COMObject
+  href: tutorials/tutorial05.html#tutorial05_csharp
+- uid: tutorial06_csharp
+  name: Understand Variant Type
+  href: tutorials/tutorial06.html#tutorial06_csharp
+- uid: tutorial07_csharp
+  name: Invoker
+  href: tutorials/tutorial07.html#tutorial07_csharp
+- uid: tutorial08_csharp
+  name: Check for a specific entity su...
+  href: tutorials/tutorial08.html#tutorial08_csharp

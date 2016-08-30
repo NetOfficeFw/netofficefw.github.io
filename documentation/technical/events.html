@@ -5,17 +5,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Invoker | NetOffice Framework </title>
+    <title>Technical Documentation | NetOffice Framework </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Invoker | NetOffice Framework ">
+    <meta name="title" content="Technical Documentation | NetOffice Framework ">
     <meta name="generator" content="docfx 2.3.1.0">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
     
   </head>
   <body data-spy="scroll" data-target="#affix">
@@ -31,8 +31,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -63,36 +63,28 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="tutorial07_csharp">
-              <h1 id="invoker">Invoker</h1>
+            <article class="content wrap" id="_content" data-uid="">
+              <h1 id="technical-documentation">Technical Documentation</h1>
               
-<p>The static class LateBindingApi.Core.Invoker is the low level interface from
-NetOffice to access a COM Server. This example shows you an example how to use it.</p>
-<p>See reference chapter4 in technical documentation for further info.</p>
-<pre><code class="lang-csharp">private void Tutorial07Main()
-{
-    // Initialize Api COMObject Support
-    LateBindingApi.Core.Factory.Initialize();
-
-    Excel.Application application = new Excel.Application();
-    application.DisplayAlerts = false;
-    application.Workbooks.Add();
-
-    Excel.Worksheet sheet = (Excel.Worksheet)application.Workbooks[1].Worksheets[1];
-    Excel.Range sampleRange = sheet.Cells[1, 1];
-
-    // we set the COMVariant ColorIndex from Font of ouer sample range
-    // with the invoker class
-    Invoker.PropertySet(sampleRange.Font, &quot;ColorIndex&quot;, 1);
-
-    // creates a native unmanaged ComProxy with the invoker
-    object comProxy = Invoker.PropertyGet(application, &quot;Workbooks&quot;);
-    Marshal.ReleaseComObject(comProxy);
-
-    application.Quit();
-    application.Dispose();
-}
-</code></pre><p><a href="tutorial08.html">Tutorial 8: Check for a specific entity support at runtime</a></p>
+<h2 id="events-in-netoffice">Events in NetOffice</h2>
+<p>NetOffice offers you a completely version-independent event support. In order to
+prevent naming conflict, every event name in NetOffice has <code>Event</code> appended.</p>
+<p>Objects which export events implement a COM Event Interface. This Event
+Interface is connected at runtime to the object. In NetOffice this happends on
+demand during the first subscription to a event.</p>
+<p>If you want to free object, for which you have events subscribed, you should not
+use <code>Dispose()</code> but <code>Dispose(bool disposeEventBinding)</code> resp.
+<code>DisposeChildInstances(bool disposeEventBinding)</code> and pass in <code>false</code> as parameter
+to preserve the created <code>EventBridge</code> so events can still be retrieved.</p>
+<p>If there are COM objects passed as parameter in the event procedures, you should
+free these COM objects at the end of the event procedure with <code>Dipose()</code> to keep
+the number of created COM proxies low. Otherwise, these COM proxies will stay
+around as Child Proxies of the event exporting Objects in the COM Proxy Table of
+NetOffice.</p>
+<h3 id="related-tutorials">Related Tutorials</h3>
+<ol>
+<li><a class="xref" href="../../tutorials/tutorial03.html#tutorial03_csharp">Tutorial03</a></li>
+</ol>
 
             </article>
           </div>
@@ -119,9 +111,9 @@ NetOffice to access a COM Server. This example shows you an example how to use i
       </footer>
     </div>
     
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
