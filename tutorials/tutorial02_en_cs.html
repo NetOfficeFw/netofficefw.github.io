@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Check for a specific entity support at runtime | NetOffice Framework </title>
+    <title>Efficient using Dispose &amp; DisposeChildInstances | NetOffice Framework </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Check for a specific entity support at runtime | NetOffice Framework ">
-    <meta name="generator" content="docfx 2.3.1.0">
+    <meta name="title" content="Efficient using Dispose &amp; DisposeChildInstances | NetOffice Framework ">
+    <meta name="generator" content="docfx 2.2.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -63,34 +63,50 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="tutorial08_csharp">
-              <h1 id="check-for-a-specific-entity-support-at-runtime">Check for a specific entity support at runtime</h1>
+            <article class="content wrap" id="_content" data-uid="tutorial02_csharp">
+              <h1 id="efficient-using-dispose-disposechildinstances">Efficient using Dispose &amp; DisposeChildInstances</h1>
               
-<p>Any object in NetOffice implements a special method too see at runtime a specified property or method is available
-This very important because not any property or method is available in any office version</p>
-<pre><code class="lang-csharp">bool EntityIsAvailable(string name);
-bool EntityIsAvailable(string name, SupportEntityType searchType);
-</code></pre><p>This example shows you how to use.</p>
-<p>See chapter8 in technical documentation for further info.</p>
-<pre><code class="lang-csharp">void Tutorial08Main()
+<p>In <a href="tutorial01_en_cs.html">Tutorial 1</a> you have seen how to use Dispose() to release an object
+and its created children. This tutorial shows you how to use the method
+<code>DisposeChildInstances()</code> to release all children with one call.</p>
+<p>See chapter1 and chapter5 in technical documentation for further info.</p>
+<pre><code class="lang-csharp">public void Tutorial02Main()
 {
-   // create new instance
-   Excel.Application application = new Excel.Application();
+    // start application
+    Excel.Application application = new Excel.Application();
+    application.DisplayAlerts = false;
 
-   // check for support at runtime
-   bool enableLivePreviewSupport = application.EntityIsAvailable(&quot;EnableLivePreview&quot;);
-   bool openDatabaseSupport = application.Workbooks.EntityIsAvailable(&quot;OpenDatabase&quot;);
+    Excel.Workbook book   = application.Workbooks.Add();
+    Excel.Worksheet sheet = (Excel.Worksheet)book.Worksheets.Add();
 
-   string result = &quot;Excel Runtime Check: &quot; + Environment.NewLine;
-   result += &quot;Support EnableLivePreview: &quot; + enableLivePreviewSupport.ToString() + Environment.NewLine;
-   result += &quot;Support OpenDatabase:      &quot; + openDatabaseSupport.ToString() + Environment.NewLine;
+    /*
+     * we have 5 created proxies now in proxy table as follows
+     *
+     * Application
+     *   + Workbooks
+     *     + Workbook
+     *        + Worksheets
+     *            + Worksheet
+     */
 
-   richTextBoxResult.Text = result;
+    // we dispose the child instances of the workbook
+    book.DisposeChildInstances();
 
-   application.Quit();
-   application.Dispose();
+    /*
+     * we have 3 created proxies now, the childs from book are disposed
+     *
+     * Application
+     *   + Workbooks
+     *     + Workbook
+     */
+
+    // close Excel and release the application instance and child workbooks
+    application.Quit();
+    application.Dispose();
 }
 </code></pre>
+<p><a href="tutorial03_en_cs.html">Tutorial 3: Using Dispose with event exporting Objects</a></p>
+
             </article>
           </div>
           

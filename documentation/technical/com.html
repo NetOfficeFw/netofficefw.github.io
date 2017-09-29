@@ -8,7 +8,7 @@
     <title>Technical Documentation | NetOffice Framework </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Technical Documentation | NetOffice Framework ">
-    <meta name="generator" content="docfx 2.3.1.0">
+    <meta name="generator" content="docfx 2.2.0.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -94,7 +94,8 @@ Marshal.ReleaseComObject(books);
 
 application.Quit();
 Marshal.ReleaseComObject(application);
-</code></pre><p>As you probably know, you have to free every COM proxy object with the
+</code></pre>
+<p>As you probably know, you have to free every COM proxy object with the
 Marshal.ReleaseComObject function. You are notifying the COM Server that you do
 not need the object anymore. If you do not do that, the  COM server has to keep
 the object in memory, even if you closed the application long ago. You would
@@ -111,7 +112,8 @@ foreach (Excel.Worksheet sheet in book.Worksheets)
     Console.WriteLine(sheet.Name);
     Marshal.ReleaseComObject(sheet);
 }
-</code></pre><p>By directly using the worksheets enumerator you do not have the chance of
+</code></pre>
+<p>By directly using the worksheets enumerator you do not have the chance of
 calling ReleaseComObject later on. Therefore, the COM Server keeps the
 enumerator in memory and is waiting (in vain) for notification to free it. You
 should never use COM proxies while dealing with Primary Interop Assemblies
@@ -140,7 +142,8 @@ book.Dispose();
 
 application.Quit();
 application.Dispose();
-</code></pre><p>As you can see, the code is identical to the MS Interop Assembly example, but a
+</code></pre>
+<p>As you can see, the code is identical to the MS Interop Assembly example, but a
 lot slimmer by directly using properties and omitted freeing-calls. NetOffice
 store all created COM Proxies in a COM proxy table including the information
 through which object a proxy was created. In our example we get the following
@@ -152,14 +155,15 @@ proxy tree:</p>
                 - sheet
                 - sheet
                 - sheet
-</code></pre><p>By calling <code>book.Dispose();</code> book and all other elements created through it will
+</code></pre>
+<p>By calling <code>book.Dispose();</code> book and all other elements created through it will
 be freed. In this example these are Worksheet and the 3 Worksheet references. By
 calling  <code>application.Dispose();</code> you free the remaining 2 COM Proxies.</p>
 <h3 id="related-tutorials">Related Tutorials</h3>
 <ol>
-<li><a class="xref" href="../../tutorials/tutorial01.html#tutorial01_csharp">Tutorial01</a></li>
-<li><a class="xref" href="../../tutorials/tutorial02.html#tutorial02_csharp">Tutorial02</a></li>
-<li><a class="xref" href="../../tutorials/tutorial03.html#tutorial03_csharp">Tutorial03</a></li>
+<li><a class="xref" href="../../tutorials/tutorial01_en_cs.html#tutorial01_csharp">Tutorial01</a></li>
+<li><a class="xref" href="../../tutorials/tutorial02_en_cs.html#tutorial02_csharp">Tutorial02</a></li>
+<li><a class="xref" href="../../tutorials/tutorial03_en_cs.html#tutorial03_csharp">Tutorial03</a></li>
 </ol>
 
             </article>
