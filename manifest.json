@@ -1,1 +1,648 @@
-{"homepages":[{"tocPath":"toc.html","homepage":"tutorials/index.html"},{"tocPath":"documentation/toc.html","homepage":"documentation/index.html"},{"tocPath":"toolbox/toc.html","homepage":"toolbox/index.html"},{"tocPath":"tutorials/toc.html","homepage":"tutorials/index.html"}],"xrefmap":"xrefmap.yml","files":[{"type":"Conceptual","original":"toolbox/office_compatiblity.md","output":{".html":{"relative_path":"toolbox/office_compatiblity.html","hash":"yFx+WuNZ22MDZ3aMrBy7Vg=="}}},{"type":"Conceptual","original":"toolbox/index.md","output":{".html":{"relative_path":"toolbox/index.html","hash":"+WYPoqOveY1pjTnlHMWhWw=="}}},{"type":"Conceptual","original":"documentation/faq.md","output":{".html":{"relative_path":"documentation/faq.html","hash":"Jj4S7KKErNw+A13F9Qg9dg=="}}},{"type":"Conceptual","original":"index.md","output":{".html":{"relative_path":"index.html","hash":"geseYiy51pZmJ04ySOWPEw=="}}},{"type":"Resource","original":"toolbox/assets/RegistryEditor.png","output":{"resource":{"relative_path":"toolbox/assets/RegistryEditor.png"}}},{"type":"Conceptual","original":"documentation/technical/com.md","output":{".html":{"relative_path":"documentation/technical/com.html","hash":"HGOEVDOEENBxtfR4hkelRA=="}}},{"type":"Conceptual","original":"documentation/index.md","output":{".html":{"relative_path":"documentation/index.html","hash":"fqhZxCQGLOI5PKKbuAJNWQ=="}}},{"type":"Resource","original":"toolbox/assets/ProjectWizard_NewProject.png","output":{"resource":{"relative_path":"toolbox/assets/ProjectWizard_NewProject.png"}}},{"type":"Resource","original":"toolbox/assets/ProjectWizard.png","output":{"resource":{"relative_path":"toolbox/assets/ProjectWizard.png"}}},{"type":"Resource","original":"toolbox/assets/OutlookSecurity.png","output":{"resource":{"relative_path":"toolbox/assets/OutlookSecurity.png"}}},{"type":"Resource","original":"toolbox/assets/OfficeUI_ChooseApp.png","output":{"resource":{"relative_path":"toolbox/assets/OfficeUI_ChooseApp.png"}}},{"type":"Resource","original":"toolbox/assets/OfficeUI.png","output":{"resource":{"relative_path":"toolbox/assets/OfficeUI.png"}}},{"type":"Resource","original":".nojekyll","output":{"resource":{"relative_path":".nojekyll"}}},{"type":"Toc","original":"tutorials/toc.yml","output":{".html":{"relative_path":"tutorials/toc.html","hash":"C0QkJRSjqWmAVKgOmenPbA=="}}},{"type":"Conceptual","original":"documentation/technical/type_system.md","output":{".html":{"relative_path":"documentation/technical/type_system.html","hash":"bpoM6Y52w/DdBH98yV2J+A=="}}},{"type":"Conceptual","original":"documentation/technical/performance.md","output":{".html":{"relative_path":"documentation/technical/performance.html","hash":"0mz+hgJaifaG6axqpk7XcA=="}}},{"type":"Conceptual","original":"documentation/technical/netoffice_overview.md","output":{".html":{"relative_path":"documentation/technical/netoffice_overview.html","hash":"0uGy8wbkmhQIAyYh/PsqYA=="}}},{"type":"Conceptual","original":"documentation/technical/index.md","output":{".html":{"relative_path":"documentation/technical/index.html","hash":"TX4iREaMsgRrzD+z2DJz1Q=="}}},{"type":"Resource","original":"toolbox/assets/OfficeCompatibility.png","output":{"resource":{"relative_path":"toolbox/assets/OfficeCompatibility.png"}}},{"type":"Resource","original":"toolbox/assets/AppObserver.png","output":{"resource":{"relative_path":"toolbox/assets/AppObserver.png"}}},{"type":"Resource","original":"toolbox/assets/AddinGuard.png","output":{"resource":{"relative_path":"toolbox/assets/AddinGuard.png"}}},{"type":"Resource","original":"documentation/assets/NetOffice_IntelliSense.jpg","output":{"resource":{"relative_path":"documentation/assets/NetOffice_IntelliSense.jpg"}}},{"type":"Resource","original":"CNAME","output":{"resource":{"relative_path":"CNAME"}}},{"type":"Conceptual","original":"tutorials/index.md","output":{".html":{"relative_path":"tutorials/index.html","hash":"rPasCP71LLM6EQpP0h/QOg=="}}},{"type":"Conceptual","original":"toolbox/registry_editor.md","output":{".html":{"relative_path":"toolbox/registry_editor.html","hash":"AF+5u0JLB3KcmPDugPQAFQ=="}}},{"type":"Conceptual","original":"toolbox/project_wizard.md","output":{".html":{"relative_path":"toolbox/project_wizard.html","hash":"DNemu1CbZ5xXkLn74ebQ1w=="}}},{"type":"Conceptual","original":"toolbox/outlook_security.md","output":{".html":{"relative_path":"toolbox/outlook_security.html","hash":"M/vSG0ztzIxYn12fAWT4uQ=="}}},{"type":"Conceptual","original":"toolbox/office_ui.md","output":{".html":{"relative_path":"toolbox/office_ui.html","hash":"t93yCx4tllQwGzYqFC9u7A=="}}},{"type":"Conceptual","original":"tutorials/tutorial05_en_cs.md","output":{".html":{"relative_path":"tutorials/tutorial05_en_cs.html","hash":"CR+3dsT6XAyZMnu4aMpPXg=="}}},{"type":"Conceptual","original":"tutorials/tutorial04_en_cs.md","output":{".html":{"relative_path":"tutorials/tutorial04_en_cs.html","hash":"GPSMVyPYRXxMHRAP1WEpGw=="}}},{"type":"Conceptual","original":"toolbox/app_observer.md","output":{".html":{"relative_path":"toolbox/app_observer.html","hash":"C9xLibK5bOAbZysZJIceug=="}}},{"type":"Conceptual","original":"toolbox/addin_guard.md","output":{".html":{"relative_path":"toolbox/addin_guard.html","hash":"SSdYlOaEkkEe81KuiX6tBQ=="}}},{"type":"Conceptual","original":"documentation/technical/versioning.md","output":{".html":{"relative_path":"documentation/technical/versioning.html","hash":"U3s1RX+xkHIr0lJR1gLlOg=="}}},{"type":"Conceptual","original":"api/index.md","output":{".html":{"relative_path":"api/index.html","hash":"Lr9P2DCIMgc9V6TWK66BPQ=="}}},{"type":"Conceptual","original":"tutorials/tutorial08_en_cs.md","output":{".html":{"relative_path":"tutorials/tutorial08_en_cs.html","hash":"CmL3VLYhNdmOb/xvWw/Rvg=="}}},{"type":"Conceptual","original":"tutorials/tutorial07_en_cs.md","output":{".html":{"relative_path":"tutorials/tutorial07_en_cs.html","hash":"DcxeYy/i4qBpMlkNe8Kf+g=="}}},{"type":"Conceptual","original":"tutorials/tutorial06_en_cs.md","output":{".html":{"relative_path":"tutorials/tutorial06_en_cs.html","hash":"NsxpEEeZbmxzNpTw5KWc1Q=="}}},{"type":"Conceptual","original":"tutorials/tutorial03_en_cs.md","output":{".html":{"relative_path":"tutorials/tutorial03_en_cs.html","hash":"kA5Pwj2MANptnO+2jiFo7A=="}}},{"type":"Conceptual","original":"tutorials/tutorial02_en_cs.md","output":{".html":{"relative_path":"tutorials/tutorial02_en_cs.html","hash":"OwE7vVIzlrPUV7G9qGoM6g=="}}},{"type":"Conceptual","original":"tutorials/tutorial01_en_cs.md","output":{".html":{"relative_path":"tutorials/tutorial01_en_cs.html","hash":"fYQxsRLhPjHagFgI83D5jA=="}}},{"type":"Toc","original":"toolbox/toc.yml","output":{".html":{"relative_path":"toolbox/toc.html","hash":"gwIRBj8y1/tBn2rOfXliLw=="}}},{"type":"Toc","original":"documentation/toc.yml","output":{".html":{"relative_path":"documentation/toc.html","hash":"RVzjp6a0W+BSZ1DXtcSj3g=="}}},{"type":"Toc","original":"toc.yml","output":{".html":{"relative_path":"toc.html","hash":"HjJjWnAxXcFGg6fn+Hx6NA=="}}},{"type":"Conceptual","original":"documentation/technical/events.md","output":{".html":{"relative_path":"documentation/technical/events.html","hash":"mTPnROt0neryHf8AISQwXw=="}}}]}
+{
+  "homepages": [],
+  "source_base_path": "d:/dev/github/NetOfficeFw/NetOffice-Docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "source_relative_path": ".nojekyll",
+      "output": {
+        "resource": {
+          "relative_path": ".nojekyll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "CNAME",
+      "output": {
+        "resource": {
+          "relative_path": "CNAME"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "README.txt",
+      "output": {
+        "resource": {
+          "relative_path": "README.txt"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "J/tGC8GE1wQTe1LsPXtkQw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "hSU+HXCwPy3dG4yRymoqOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "documentation/assets/NetOffice_IntelliSense.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "documentation/assets/NetOffice_IntelliSense.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "documentation/assets/NetOffice_Projects_DependenciesGraph.png",
+      "output": {
+        "resource": {
+          "relative_path": "documentation/assets/NetOffice_Projects_DependenciesGraph.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/faq.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/faq.html",
+          "hash": "t44zc6S+DwwUjb1ihFYhGQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/index.html",
+          "hash": "7EDAxcYSWKGQ8nD/K4lCCQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/technical/com.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/technical/com.html",
+          "hash": "t4O2BRMEDWFLcatGm38q/g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/technical/events.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/technical/events.html",
+          "hash": "cbJOWtTRIZoEmymPflLxgQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/technical/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/technical/index.html",
+          "hash": "XuC5RaZKvtIN8Ey7Wo6LcQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/technical/netoffice_overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/technical/netoffice_overview.html",
+          "hash": "x//ylNLZ/+0y19fvEAXZ1A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/technical/performance.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/technical/performance.html",
+          "hash": "l1BMBeESNFRbloQRMk7FZw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/technical/type_system.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/technical/type_system.html",
+          "hash": "FJ53hxzqqdFRS2v9xxZi9w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/technical/versioning.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/technical/versioning.html",
+          "hash": "HKT0jykiVvTImtKtV91Ptg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "documentation/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/toc.html",
+          "hash": "d1poachU3CqmpRwHn5nCrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/NetOfficeOriginalLogo_96x96.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/NetOfficeOriginalLogo_96x96.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/landing_page_hero_3960x720.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/landing_page_hero_3960x720.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/netoffice_favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/netoffice_favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/netoffice_logo_200x200.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/netoffice_logo_200x200.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "lXqxkQcmADKDDNgwTWbcig=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "7LQJULXZHf1BAk6x595wrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "toolbox/addin_guard.md",
+      "output": {
+        ".html": {
+          "relative_path": "toolbox/addin_guard.html",
+          "hash": "68qO+QeH2Nl5LlLP3+QR+g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "toolbox/app_observer.md",
+      "output": {
+        ".html": {
+          "relative_path": "toolbox/app_observer.html",
+          "hash": "+fh6bXZ0dNOpnophcgOMzA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "toolbox/assets/AddinGuard.png",
+      "output": {
+        "resource": {
+          "relative_path": "toolbox/assets/AddinGuard.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "toolbox/assets/AppObserver.png",
+      "output": {
+        "resource": {
+          "relative_path": "toolbox/assets/AppObserver.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "toolbox/assets/OfficeCompatibility.png",
+      "output": {
+        "resource": {
+          "relative_path": "toolbox/assets/OfficeCompatibility.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "toolbox/assets/OfficeUI.png",
+      "output": {
+        "resource": {
+          "relative_path": "toolbox/assets/OfficeUI.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "toolbox/assets/OfficeUI_ChooseApp.png",
+      "output": {
+        "resource": {
+          "relative_path": "toolbox/assets/OfficeUI_ChooseApp.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "toolbox/assets/OutlookSecurity.png",
+      "output": {
+        "resource": {
+          "relative_path": "toolbox/assets/OutlookSecurity.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "toolbox/assets/ProjectWizard.png",
+      "output": {
+        "resource": {
+          "relative_path": "toolbox/assets/ProjectWizard.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "toolbox/assets/ProjectWizard_NewProject.png",
+      "output": {
+        "resource": {
+          "relative_path": "toolbox/assets/ProjectWizard_NewProject.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "toolbox/assets/RegistryEditor.png",
+      "output": {
+        "resource": {
+          "relative_path": "toolbox/assets/RegistryEditor.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "toolbox/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "toolbox/index.html",
+          "hash": "Ofws4ZMq4bPSbK75lbs+4A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "toolbox/office_compatiblity.md",
+      "output": {
+        ".html": {
+          "relative_path": "toolbox/office_compatiblity.html",
+          "hash": "YgZdf9e+Vhn2aUB4wPvwkw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "toolbox/office_ui.md",
+      "output": {
+        ".html": {
+          "relative_path": "toolbox/office_ui.html",
+          "hash": "OQHJGshQGURdqCa8UdkCKw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "toolbox/outlook_security.md",
+      "output": {
+        ".html": {
+          "relative_path": "toolbox/outlook_security.html",
+          "hash": "JYB20Ct9XgrWLYf55kIg0w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "toolbox/project_wizard.md",
+      "output": {
+        ".html": {
+          "relative_path": "toolbox/project_wizard.html",
+          "hash": "A859k1R2LsARlfTGb243AQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "toolbox/registry_editor.md",
+      "output": {
+        ".html": {
+          "relative_path": "toolbox/registry_editor.html",
+          "hash": "0NjzdJRP47RIyXRmIA0iHg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toolbox/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toolbox/toc.html",
+          "hash": "fh/0xnbdx201IwtaJ3pLkw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/index.html",
+          "hash": "92XU/Or+r9GqDhPLejqXWA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "tutorials/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/toc.html",
+          "hash": "zL79AwZ8BWqCfNykXLX24g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/tutorial01_en_cs.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/tutorial01_en_cs.html",
+          "hash": "0K+LevB0omukYuRaYWL8vw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/tutorial02_en_cs.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/tutorial02_en_cs.html",
+          "hash": "rWLv+ZEd+T3p3WwjZMDWTg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/tutorial03_en_cs.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/tutorial03_en_cs.html",
+          "hash": "N5B8ZfRPw3QhFDD+625RJQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/tutorial04_en_cs.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/tutorial04_en_cs.html",
+          "hash": "eVFB0Mgz3GoTVhcoDvrqjg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/tutorial05_en_cs.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/tutorial05_en_cs.html",
+          "hash": "U84HqwdGVnIr54cUivKYxA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/tutorial06_en_cs.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/tutorial06_en_cs.html",
+          "hash": "/7CtqEMAiyMT4NCwro/iNQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/tutorial07_en_cs.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/tutorial07_en_cs.html",
+          "hash": "TUJE5WRzjxEyILD24RFqOg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tutorials/tutorial08_en_cs.md",
+      "output": {
+        ".html": {
+          "relative_path": "tutorials/tutorial08_en_cs.html",
+          "hash": "fg2JyOkv3Zmc9q7iXlpxIg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "RestApiDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
