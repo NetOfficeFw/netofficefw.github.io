@@ -1,23 +1,14 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Observable COM Proxy Count | NetOffice Framework </title>
+  <title> | NetOffice Framework</title>
   <meta name="viewport" content="width=device-width">
-  <meta name="title" content="Observable COM Proxy Count | NetOffice Framework ">
-  <meta name="generator" content="docfx 2.24.0.0">
   
-  <link rel="shortcut icon" href="../images/netoffice_favicon.ico">
-  <link rel="stylesheet" href="../styles/uswds.min.css">
-  <!-- <link rel="stylesheet" href="../styles/docfx.css"> -->
-  <link rel="stylesheet" href="../styles/main.css">
-  <meta property="docfx:navrel" content="../toc.html">
-  <meta property="docfx:tocrel" content="toc.html">
-  
-  
-  
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles/vendor.min.css">
+  <link rel="stylesheet" href="/styles/main.min.css">
 </head>
 <body data-spy="scroll" data-target="#affix" class="">
     <header class="usa-header usa-header-basic" role="banner">
@@ -25,8 +16,8 @@
         <div class="usa-navbar">
           <div class="usa-logo" id="basic-logo">
             <span class="usa-logo-text">
-              <a href="../index.html" title="NetOffice Framework">
-                <img id="logo" class="logo" src="../images/NetOfficeOriginalLogo_96x96.png" alt="NetOffice logo" width="32" height="32">
+              <a href="/index.html" title="NetOffice Framework">
+                <img id="logo" class="logo" src="/images/NetOfficeOriginalLogo_96x96.png" alt="NetOffice logo" width="32" height="32">
                 NetOffice
               </a>
             </span>
@@ -39,26 +30,23 @@
             <img src="/assets/img/close.svg" alt="close">
           </button>
       
-          <ul class="usa-nav-primary usa-accordion nav-level1">
-            <li class=" usa-current">
-              <a href="../tutorials/" title="Tutorials" class="usa-nav-link usa-current">Tutorials</a>
+          <ul class="site-nav-primary usa-nav-primary usa-accordion nav-level0">
+            <li>
+              <a href="/tutorials/" title="Tutorials" class="usa-nav-link usa-current">Tutorials</a>
             </li>
-            <li class="">
-              <a href="../toolbox/" title="Toolbox" class="usa-nav-link ">Toolbox</a>
+            <li>
+              <a href="/toolbox/" title="Toolbox" class="usa-nav-link">Toolbox</a>
             </li>
-            <li class="">
-              <a href="../documentation/" title="Documentation" class="usa-nav-link ">Documentation</a>
-            </li>
-            <li class="">
-              <a href="../api/index.html" title="Api Documentation" class="usa-nav-link ">Api Documentation</a>
+            <li>
+              <a href="/documentation/" title="Documentation" class="usa-nav-link">Documentation</a>
             </li>
           </ul>
       
-          <form class="usa-search usa-search-small ">
+          <form class="usa-search usa-search-small">
             <div role="search">
-              <label class="usa-sr-only" for="basic-search-field-small">Search small</label>
-              <input id="basic-search-field-small" type="search" name="search">
-              <button type="submit">
+              <label class="usa-sr-only" for="basic-search-field-small">Search</label>
+              <input id="basic-search-field-small" type="search" name="search" title="Enter search string...">
+              <button type="submit" title="Search">
                 <span class="usa-sr-only">Search</span>
               </button>
             </div>
@@ -69,133 +57,124 @@
 
     <main id="main-content">
 
-      
-      <div class="sidenav hide-when-search">
-        <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-        <div class="sidetoggle collapse" id="sidetoggle">
-          <div id="sidetoc"></div>
-        </div>
-      </div>
       <div class="usa-grid grid-right">
         <div class="col-md-10">
           <article class="content wrap" id="_content" data-uid="tutorial04_csharp">
-<h1 id="observable-com-proxy-count">Observable COM Proxy Count</h1>
-
-<p>Sometimes it is very useful to know the count of open COM Proxies in your application.
-NetOffice offers you a static property and notification event for this.</p>
-<pre><code class="lang-csharp">   int LateBindingApi.Core.Factory.ProxyCount;
-   event LateBindingApi.Core.Factory.ProxyCountChanged;
-</code></pre><pre><code class="lang-csharp">Excel.Application _application;
-
-public Form1()
+              <h1 id="observable-com-proxy-count">Observable COM Proxy Count</h1>
+<p>Sometimes it is very useful to know the count of open COM Proxy objects in your application.
+NetOffice offers you a static property and event handler for this.</p>
+<pre><code class="hljs lang-csharp"><span class="hljs-keyword">int</span> LateBindingApi.Core.Factory.ProxyCount;
+<span class="hljs-keyword">event</span> LateBindingApi.Core.Factory.ProxyCountChanged;
+</code></pre>
+<pre><code class="hljs lang-csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Tutorial4</span>
 {
-    InitializeComponent();
+    Excel.Application _application;
 
-    // Initialize Api COMObject Support
-    LateBindingApi.Core.Factory.Initialize();
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Form1</span>(<span class="hljs-params"></span>)
+    </span>{
+        InitializeComponent();
 
-    LateBindingApi.Core.Factory.ProxyCountChanged += new Factory.ProxyCountChangedHandler(Factory_ProxyCountChanged);
-}
+        <span class="hljs-comment">// Initialize Api COMObject Support</span>
+        LateBindingApi.Core.Factory.Initialize();
 
-void Factory_ProxyCountChanged(int proxyCount)
-{
-    if (labelProxyCount.InvokeRequired)
-    {
-        labelProxyCount.Tag = proxyCount.ToString();
-        labelProxyCount.Invoke(new MethodInvoker(UpdateLabel));
+        LateBindingApi.Core.Factory.ProxyCountChanged += <span class="hljs-keyword">new</span> Factory.ProxyCountChangedHandler(Factory_ProxyCountChanged);
     }
-    else
-    {
-        labelProxyCount.Text = proxyCount.ToString();
-    }
-}
 
-private void buttonExcel_Click(object sender, EventArgs e)
-{
-    if (null == _application)
-    {
-        // start application
-        _application = new Excel.Application();
-        _application.DisplayAlerts = false;
-        buttonExcel.Text = &quot;Quit Excel&quot;;
-        buttonWorkbook.Enabled = true;
-        buttonAddins.Enabled = true;
-        buttonAddRemoveWorkbook.Enabled = true;
-    }
-    else
-    {
-        _application.Quit();
-        _application.Dispose();
-        _application = null;
-        buttonExcel.Text = &quot;Start Excel&quot;;
-        buttonWorkbook.Enabled = false;
-        buttonAddins.Enabled = false;
-        buttonAddRemoveWorkbook.Enabled = false;
-    }
-}
-
-private void buttonWorkbook_Click(object sender, EventArgs e)
-{
-    // 2 new proxies, the workbooks proxy(implicit) and the new workbook from Add()
-    if (null != _application)
-    {
-        _application.Workbooks.Add();
-    }
-}
-
-private void buttonAddins_Click(object sender, EventArgs e)
-{
-    if (null != _application)
-    {
-        // 1 new enumerator proxy and 1 new proxy for any Addin
-        foreach (Excel.AddIn item in _application.AddIns)
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Factory_ProxyCountChanged</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> proxyCount</span>)
+    </span>{
+        <span class="hljs-keyword">if</span> (labelProxyCount.InvokeRequired)
         {
-            Console.WriteLine(item.Name);
+            labelProxyCount.Tag = proxyCount.ToString();
+            labelProxyCount.Invoke(<span class="hljs-keyword">new</span> MethodInvoker(UpdateLabel));
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            labelProxyCount.Text = proxyCount.ToString();
         }
     }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonExcel_Click</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> == _application)
+        {
+            <span class="hljs-comment">// start application</span>
+            _application = <span class="hljs-keyword">new</span> Excel.Application();
+            _application.DisplayAlerts = <span class="hljs-literal">false</span>;
+            buttonExcel.Text = <span class="hljs-string">"Quit Excel"</span>;
+            buttonWorkbook.Enabled = <span class="hljs-literal">true</span>;
+            buttonAddins.Enabled = <span class="hljs-literal">true</span>;
+            buttonAddRemoveWorkbook.Enabled = <span class="hljs-literal">true</span>;
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            <span class="hljs-comment">// close application</span>
+            _application.Quit();
+            _application.Dispose();
+            _application = <span class="hljs-literal">null</span>;
+            buttonExcel.Text = <span class="hljs-string">"Start Excel"</span>;
+            buttonWorkbook.Enabled = <span class="hljs-literal">false</span>;
+            buttonAddins.Enabled = <span class="hljs-literal">false</span>;
+            buttonAddRemoveWorkbook.Enabled = <span class="hljs-literal">false</span>;
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonWorkbook_Click</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)
+    </span>{
+        <span class="hljs-comment">// 2 new proxies, the workbooks proxy(implicit) and the new workbook from Add()</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != _application)
+        {
+            _application.Workbooks.Add();
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonAddins_Click</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != _application)
+        {
+            <span class="hljs-comment">// 1 new enumerator proxy and 1 new proxy for any Addin</span>
+            <span class="hljs-keyword">foreach</span> (Excel.AddIn item <span class="hljs-keyword">in</span> _application.AddIns)
+            {
+                Console.WriteLine(item.Name);
+            }
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonAddRemoveWorkbook_Click</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)
+    </span>{
+        <span class="hljs-comment">// add a new workbook and a new worksheet to the workbook</span>
+        <span class="hljs-comment">// the worksheet is a child proxy from workbook, after dispose the workbook</span>
+        <span class="hljs-comment">// creates 4 new proxies</span>
+        <span class="hljs-comment">// the open proxy count is the same as before</span>
+
+        <span class="hljs-keyword">int</span> proxyCount = LateBindingApi.Core.Factory.ProxyCount;
+
+        Excel.Workbook book = _application.Workbooks.Add();
+        book.Worksheets.Add();
+
+        <span class="hljs-keyword">int</span> proxyCountAfterCreate = LateBindingApi.Core.Factory.ProxyCount;
+
+        <span class="hljs-comment">// dispose all child instances from application</span>
+        _application.DisposeChildInstances();
+
+        <span class="hljs-keyword">int</span> proxyCountAfterDispose = LateBindingApi.Core.Factory.ProxyCount;
+
+        <span class="hljs-keyword">string</span> message = <span class="hljs-keyword">string</span>.Format(<span class="hljs-string">"Method creates a new Workbook with 1 new Worksheet\r\n"</span> +
+                                            <span class="hljs-string">"ProxyCount before create is {0}\r\n"</span> +
+                                            <span class="hljs-string">"ProxyCount after create is {1}\r\n"</span> +
+                                            <span class="hljs-string">"ProxyCount after dispose Workbook is {2}"</span>, proxyCount, proxyCountAfterCreate, proxyCountAfterDispose);
+
+        MessageBox.Show(message, <span class="hljs-keyword">this</span>.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">UpdateLabel</span>(<span class="hljs-params"></span>)
+    </span>{
+        labelProxyCount.Text = labelProxyCount.Tag <span class="hljs-keyword">as</span> <span class="hljs-keyword">string</span>;
+    }
 }
+</code></pre>
+<p><a href="tutorial05_en_cs.html">Tutorial 5: Understanding COMObject</a></p>
 
-private void buttonAddRemoveWorkbook_Click(object sender, EventArgs e)
-{
-    // add a new worbook and a new worksheet to the workbook
-    // the worksheet is a child proxy from worbook, after dispose the workbook
-    // creates 4 new proxies
-    // the open proxy count is the same as before
-
-    int proxyCount = LateBindingApi.Core.Factory.ProxyCount;
-
-    Excel.Workbook book = _application.Workbooks.Add();
-    book.Worksheets.Add();
-
-    int proxyCountAfterCreate = LateBindingApi.Core.Factory.ProxyCount;
-
-    // dispose all child instances from application
-    _application.DisposeChildInstances();
-
-    int proxyCountAfterDispose = LateBindingApi.Core.Factory.ProxyCount;
-
-    string message = string.Format(&quot;Method creates a new Workbook with 1 new Worksheet\r\n&quot; +
-                                        &quot;ProxyCount before create is {0}\r\n&quot; +
-                                        &quot;ProxyCount after create is {1}\r\n&quot; +
-                                        &quot;ProxyCount after dispose Workbook is {2}&quot;, proxyCount, proxyCountAfterCreate, proxyCountAfterDispose);
-
-    MessageBox.Show(message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-}
-
-private void UpdateLabel()
-{
-    labelProxyCount.Text = labelProxyCount.Tag as string;
-}
-</code></pre><p><a href="tutorial05_en_cs.html">Tutorial 5: Understanding COMObject</a></p>
-</article>
-        </div>
-        
-        <div class="hidden-sm col-md-2" role="complementary">
-          <div class="sideaffix">
-            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-            <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
-            </nav>
-          </div>
+          </article>
         </div>
       </div>
     </main>
@@ -205,16 +184,35 @@ private void UpdateLabel()
       </div>
       <div class="usa-footer-secondary_section">
         <div class="usa-grid">
-          <div class="usa-footer-logo usa-width-one-half">
-            <strong class="xusa-footer-logo-heading">NetOffice Framework</strong><br>
-            <small>Copyright © 2016-2017 NetOffice Framework.<br>Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0<a></a>.</a></small>
-          </div>
-          <div class="usa-footer-contact-links usa-width-one-half">
-            <a class="usa-link-github" href="https://github.com/NetOfficeFw">
-              <span>https://github.com/NetOfficeFw</span>
-            </a>
+          <div class="usa-width-three-fourths footer-content">
+            <h3>Join the community</h3>
+            <div class="usa-grid-full footer-contact-links">
+              <div class="usa-width-one-third">
+                <div class="usa-media_block">
+                  <img class="usa-media_block-img" src="/images/icon-question.svg" alt="">
+                  <div class="usa-media_block-body">
+                    <h4>Running into an issue?</h4>
+                    <a href="https://github.com/NetOfficeFw/NetOffice/issues">
+                      Ask questions on GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>  </body>
+    
+      <div class="footer-section-bottom">
+        <div class="usa-grid">
+          <p>
+            Copyright © 2016-2017 NetOffice Framework. Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+            <a class="usa-link-github" href="https://github.com/NetOfficeFw">
+              <span>https://github.com/NetOfficeFw</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+</body>
 </html>

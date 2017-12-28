@@ -1,23 +1,14 @@
-﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Understanding COMObject | NetOffice Framework </title>
+  <title> | NetOffice Framework</title>
   <meta name="viewport" content="width=device-width">
-  <meta name="title" content="Understanding COMObject | NetOffice Framework ">
-  <meta name="generator" content="docfx 2.24.0.0">
   
-  <link rel="shortcut icon" href="../images/netoffice_favicon.ico">
-  <link rel="stylesheet" href="../styles/uswds.min.css">
-  <!-- <link rel="stylesheet" href="../styles/docfx.css"> -->
-  <link rel="stylesheet" href="../styles/main.css">
-  <meta property="docfx:navrel" content="../toc.html">
-  <meta property="docfx:tocrel" content="toc.html">
-  
-  
-  
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles/vendor.min.css">
+  <link rel="stylesheet" href="/styles/main.min.css">
 </head>
 <body data-spy="scroll" data-target="#affix" class="">
     <header class="usa-header usa-header-basic" role="banner">
@@ -25,8 +16,8 @@
         <div class="usa-navbar">
           <div class="usa-logo" id="basic-logo">
             <span class="usa-logo-text">
-              <a href="../index.html" title="NetOffice Framework">
-                <img id="logo" class="logo" src="../images/NetOfficeOriginalLogo_96x96.png" alt="NetOffice logo" width="32" height="32">
+              <a href="/index.html" title="NetOffice Framework">
+                <img id="logo" class="logo" src="/images/NetOfficeOriginalLogo_96x96.png" alt="NetOffice logo" width="32" height="32">
                 NetOffice
               </a>
             </span>
@@ -39,26 +30,23 @@
             <img src="/assets/img/close.svg" alt="close">
           </button>
       
-          <ul class="usa-nav-primary usa-accordion nav-level1">
-            <li class=" usa-current">
-              <a href="../tutorials/" title="Tutorials" class="usa-nav-link usa-current">Tutorials</a>
+          <ul class="site-nav-primary usa-nav-primary usa-accordion nav-level0">
+            <li>
+              <a href="/tutorials/" title="Tutorials" class="usa-nav-link usa-current">Tutorials</a>
             </li>
-            <li class="">
-              <a href="../toolbox/" title="Toolbox" class="usa-nav-link ">Toolbox</a>
+            <li>
+              <a href="/toolbox/" title="Toolbox" class="usa-nav-link">Toolbox</a>
             </li>
-            <li class="">
-              <a href="../documentation/" title="Documentation" class="usa-nav-link ">Documentation</a>
-            </li>
-            <li class="">
-              <a href="../api/index.html" title="Api Documentation" class="usa-nav-link ">Api Documentation</a>
+            <li>
+              <a href="/documentation/" title="Documentation" class="usa-nav-link">Documentation</a>
             </li>
           </ul>
       
-          <form class="usa-search usa-search-small ">
+          <form class="usa-search usa-search-small">
             <div role="search">
-              <label class="usa-sr-only" for="basic-search-field-small">Search small</label>
-              <input id="basic-search-field-small" type="search" name="search">
-              <button type="submit">
+              <label class="usa-sr-only" for="basic-search-field-small">Search</label>
+              <input id="basic-search-field-small" type="search" name="search" title="Enter search string...">
+              <button type="submit" title="Search">
                 <span class="usa-sr-only">Search</span>
               </button>
             </div>
@@ -69,60 +57,46 @@
 
     <main id="main-content">
 
-      
-      <div class="sidenav hide-when-search">
-        <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-        <div class="sidetoggle collapse" id="sidetoggle">
-          <div id="sidetoc"></div>
-        </div>
-      </div>
       <div class="usa-grid grid-right">
         <div class="col-md-10">
           <article class="content wrap" id="_content" data-uid="tutorial05_csharp">
-<h1 id="understanding-comobject">Understanding COMObject</h1>
-
+              <h1 id="understanding-comobject">Understanding COMObject</h1>
 <p>COMObject is the common base type for all objects in NetOffice which are based on
-CoClasses or Interfaces and also the type for anonymous COM Proxies at design time.
-This example shows you how to use.</p>
-<p>See chapter1 and chapter2 in technical documentation for further info.</p>
-<pre><code class="lang-csharp">private void Tutorial05Main()
-{
-    // start application
-    Excel.Application application = new Excel.Application();
-    application.DisplayAlerts = false;
+CoClasses or Interfaces and also the type for anonymous COM Proxy objects at design time.</p>
+<p>This example shows you how to use the <code>COMObject</code> type.</p>
+<p>See chapter1 and chapter2 in technical documentation for more information.</p>
+<pre><code class="hljs lang-csharp"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Tutorial05Main</span>(<span class="hljs-params"></span>)
+</span>{
+    <span class="hljs-comment">// start application</span>
+    Excel.Application application = <span class="hljs-keyword">new</span> Excel.Application();
+    application.DisplayAlerts = <span class="hljs-literal">false</span>;
 
-    // create new Workbook
+    <span class="hljs-comment">// create new Workbook</span>
     Excel.Workbook book = application.Workbooks.Add();
 
-    // ActiveSheet is defined as unkown Proxy in Excel Type Library, it can
-    // have multiple types at runtime but its always a COM Proxy, never a
-    // scalar type like bool or int. In VBA or PIA it is converted to object,
-    // in NetOffice it is represented as COMObject
-    // All NetOffice classes inherit from COMObject
+    <span class="hljs-comment">// ActiveSheet is defined as unkown Proxy in Excel Type Library, it can</span>
+    <span class="hljs-comment">// have multiple types at runtime but it is always a COM Proxy, never a</span>
+    <span class="hljs-comment">// scalar type like bool or int. In VBA or PIA it is converted to object,</span>
+    <span class="hljs-comment">// in NetOffice it is represented as COMObject</span>
+    <span class="hljs-comment">// All NetOffice classes inherit from COMObject</span>
     COMObject sheet = application.ActiveSheet;
-    if (sheet is Excel.Worksheet)
+    <span class="hljs-keyword">if</span> (sheet <span class="hljs-keyword">is</span> Excel.Worksheet)
     {
         Excel.Worksheet activeSheet = (Excel.Worksheet)sheet;
     }
 
-    // 3 basic properties of COMObject
-    object proxy          = sheet.UnderlyingObject;
-    string proxyClassName = sheet.UnderlyingTypeName;
-    bool   isDisposed     = sheet.IsDisposed;
+    <span class="hljs-comment">// 3 basic properties of COMObject</span>
+    <span class="hljs-keyword">object</span> proxy          = sheet.UnderlyingObject;
+    <span class="hljs-keyword">string</span> proxyClassName = sheet.UnderlyingTypeName;
+    <span class="hljs-keyword">bool</span>   isDisposed     = sheet.IsDisposed;
 
     application.Quit();
     application.Dispose();
 }
-</code></pre><p><a href="tutorial06_en_cs.html">Tutorial 6: Understand Variant Type</a></p>
-</article>
-        </div>
-        
-        <div class="hidden-sm col-md-2" role="complementary">
-          <div class="sideaffix">
-            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-            <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
-            </nav>
-          </div>
+</code></pre>
+<p><a href="tutorial06_en_cs.html">Tutorial 6: Understand Variant Type</a></p>
+
+          </article>
         </div>
       </div>
     </main>
@@ -132,16 +106,35 @@ This example shows you how to use.</p>
       </div>
       <div class="usa-footer-secondary_section">
         <div class="usa-grid">
-          <div class="usa-footer-logo usa-width-one-half">
-            <strong class="xusa-footer-logo-heading">NetOffice Framework</strong><br>
-            <small>Copyright © 2016-2017 NetOffice Framework.<br>Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0<a></a>.</a></small>
-          </div>
-          <div class="usa-footer-contact-links usa-width-one-half">
-            <a class="usa-link-github" href="https://github.com/NetOfficeFw">
-              <span>https://github.com/NetOfficeFw</span>
-            </a>
+          <div class="usa-width-three-fourths footer-content">
+            <h3>Join the community</h3>
+            <div class="usa-grid-full footer-contact-links">
+              <div class="usa-width-one-third">
+                <div class="usa-media_block">
+                  <img class="usa-media_block-img" src="/images/icon-question.svg" alt="">
+                  <div class="usa-media_block-body">
+                    <h4>Running into an issue?</h4>
+                    <a href="https://github.com/NetOfficeFw/NetOffice/issues">
+                      Ask questions on GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>  </body>
+    
+      <div class="footer-section-bottom">
+        <div class="usa-grid">
+          <p>
+            Copyright © 2016-2017 NetOffice Framework. Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+            <a class="usa-link-github" href="https://github.com/NetOfficeFw">
+              <span>https://github.com/NetOfficeFw</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+</body>
 </html>
