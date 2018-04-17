@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>NetOffice Framework</title>
+  <title>Microsoft Office Add-ins using NetOffice | NetOffice Framework</title>
   <meta name="viewport" content="width=device-width">
   
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/styles/vendor.min.css">
   <link rel="stylesheet" href="/styles/main.min.css">
 </head>
-<body data-spy="scroll" data-target="#affix" class="landing-page">
+<body data-spy="scroll" data-target="#affix" class="">
     <header class="usa-header usa-header-basic" role="banner">
       <div class="usa-nav-container">
         <div class="usa-navbar">
@@ -32,7 +32,7 @@
       
           <ul class="site-nav-primary usa-nav-primary usa-accordion nav-level0">
             <li>
-              <a href="/tutorials/" title="Tutorials" class="usa-nav-link">Tutorials</a>
+              <a href="/tutorials/" title="Tutorials" class="usa-nav-link usa-current">Tutorials</a>
             </li>
             <li>
               <a href="/toolbox/" title="Toolbox" class="usa-nav-link">Toolbox</a>
@@ -56,36 +56,60 @@
     </header>
 
     <main id="main-content">
-      <div class="usa-hero">
-          <div class="usa-grid">
-          <div class="usa-hero-callout usa-section-dark">
-            <h2><span class="usa-hero-callout-alt">NetOffice Framework</span></h2>
-            <p>NetOffice Framework is a set of libraries and tools for building addins, extending and automating Microsoft Office applications.<br><br>NetOffice supports extending and automating Microsoft Office applications: Excel, Word, Outlook, PowerPoint, Access, Project and Visio.</p>
-          </div>
-        </div>
-      </div>
 
       <div class="usa-grid grid-right">
         <div class="col-md-10">
-          <article class="content wrap" id="_content" data-uid="">
-              <h2 id="getting-started">Getting Started</h2>
-<p>Install NetOffice as a NuGet package (<a href="https://www.nuget.org/profiles/netoffice">list of all NetOffice packages</a>)
-into you Visual Studio project and develop an Office solution.</p>
-<pre><code>PM&gt; Install-Package NetOfficeFw.Word
-</code></pre><h2 id="features">Features</h2>
-<ul>
-<li>Microsoft Office integration without version limitations</li>
-<li>All features of Microsoft Office versions 2000, 2002, 2003, 2007, 2010, 2013 and 2016 are included</li>
-<li>Active support in version independent development</li>
-<li>Syntactically and semantically identical to the Microsoft Interop Assemblies</li>
-<li>No training if you already know the MS Office object model, use your existing PIA code</li>
-<li>Reduced and more readable code with automatic management of COM proxies</li>
-<li>Usable with .NET version 2.0 or higher</li>
-<li>Easy add-in development</li>
-<li>No deployment hurdles, no registration</li>
-<li>No dependencies, no Interop Assemblies, no need for VSTO</li>
-<li>Visual Studio Project Templates and Wizards available</li>
-</ul>
+          <article class="content wrap" id="_content" data-uid="addin01">
+              <h1 id="microsoft-office-add-ins-using-netoffice">Microsoft Office Add-ins using NetOffice</h1>
+<p>You can use the NetOffice library to create .NET Framework applications that extend Office.
+These applications are also named in old MSDN documentation as <strong>Office solutions</strong> or <strong>COM Add-ins for Microsoft Office</strong>.</p>
+<p>The create Office application add-in, create a class which extends from the <code>COMAddin</code> class
+provided by the NetOffice library.</p>
+<pre><code class="hljs lang-csharp">[<span class="hljs-meta">ProgId(<span class="hljs-meta-string">"ExcelAddinSample.Connect"</span>)</span>]
+[<span class="hljs-meta">Guid(<span class="hljs-meta-string">"CC85F97A-F409-4497-B2F2-A9581D4A2ED2"</span>)</span>]
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExcelAddin</span> : <span class="hljs-title">NetOffice</span>.<span class="hljs-title">ExcelApi</span>.<span class="hljs-title">Tools</span>.<span class="hljs-title">COMAddin</span>
+{
+
+}
+</code></pre>
+<p>You project can have multiple add-ins targeting different Microsoft Office applications.
+Each add-in class must have its unique <strong>ProgId</strong> and <strong>Guid</strong> values so it can be
+properly identified in COM infrastructure.</p>
+<h3 id="comaddin-classes">COMAddin Classes</h3>
+<p>NetOffice provides <code>COMAddin</code> classes for each Microsoft Office application.
+You will find the <code>COMAddin</code> class in the <code>Tools</code> namespace in each NetOffice
+library for an Office application.</p>
+<table>
+<thead>
+<tr>
+<th>Office Application</th>
+<th>NetOffice Library</th>
+<th>COMAddin Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MS Word</td>
+<td>WordApi.dll</td>
+<td>NetOffice.WordApi.Tools.COMAddin</td>
+</tr>
+<tr>
+<td>MS Excel</td>
+<td>ExcelApi.dll</td>
+<td>NetOffice.ExcelApi.Tools.COMAddin</td>
+</tr>
+<tr>
+<td>MS PowerPoint</td>
+<td>PowerPointApi.dll</td>
+<td>NetOffice.PowerPointApi.Tools.COMAddin</td>
+</tr>
+<tr>
+<td>MS Outlook</td>
+<td>OutlookApi.dll</td>
+<td>NetOffice.OutlookApi.Tools.COMAddin</td>
+</tr>
+</tbody>
+</table>
 
           </article>
         </div>
