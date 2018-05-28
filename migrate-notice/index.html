@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/styles/vendor.min.css">
   <link rel="stylesheet" href="/styles/main.min.css">
 </head>
-<body data-spy="scroll" data-target="#affix" class="landing-page">
+<body data-spy="scroll" data-target="#affix" class="landing-page landing-page-notice">
     <header class="usa-header usa-header-basic" role="banner">
       <div class="usa-nav-container">
         <div class="usa-navbar">
@@ -50,8 +50,8 @@
       <div class="usa-hero">
           <div class="usa-grid">
           <div class="usa-hero-callout usa-section-dark">
-            <h2><span class="usa-hero-callout-alt">NetOffice Framework</span></h2>
-            <p>NetOffice Framework is a set of libraries and tools for building addins, extending and automating Microsoft Office applications.<br><br>NetOffice supports extending and automating Microsoft Office applications: Excel, Word, Outlook, PowerPoint, Access, Project and Visio.</p>
+            <h2><span class="usa-hero-callout-alt">Notice: Upgrade to NetOfficeFw packages</span></h2>
+            <p>Official NetOffice libraries are published as NuGet packages with prefix <strong>NetOfficeFw.*</strong></p>
           </div>
         </div>
       </div>
@@ -59,31 +59,44 @@
       <div class="usa-grid grid-right">
         <div class="col-md-10">
           <article class="content wrap" id="_content" data-uid="">
-              <h2 id="getting-started">Getting Started</h2>
-<p>Install NetOffice Framework as a NuGet package (<a href="https://www.nuget.org/profiles/netoffice">list of all NetOfficeFw packages</a>)
-into you Visual Studio project and develop Microsoft Office solution.</p>
-<pre><code>PM&gt; Install-Package NetOfficeFw.Word
-</code></pre><blockquote class="notice">
-<strong>Notice:</strong> Do not use the rogue release of NetOffice.Core package 1.7.4.4.
-<a href="migrate-notice">How to migrate?</a><br>
-<br>
-Official NetOffice libraries use new <strong>NetOfficeFw</strong> prefix and are published by official NuGet account named <a href="https://www.nuget.org/profiles/netoffice">netoffice</a>.
+              <h2 id="why-should-i-upgrade-">Why Should I Upgrade?</h2>
+<p>We noticed that old NetOffice packages on NuGet server are no longer available
+(NetOffice releases 1.7.3 and older) and a rogue account named <em>netofficedotnet</em>
+published NetOffice libraries under a release 1.7.4.4.
+These packages contain the old NetOffice 1.7.3.0 libraries tough.</p>
+<p>The <a href="https://www.nuget.org/profiles/netoffice">latest official NetOffice release</a> is <strong>1.7.4.3</strong> (as of end of May 2018).</p>
+<p>Switching to NetOfficeFw packages you will get the latest NetOffice libraries
+and also improved debugging experience as we publish the symbols packages with
+the source code for the <strong>1.7.4.1</strong> and <strong>1.7.4.3</strong> releases.</p>
+<h2 id="upgrade-existing-projects">Upgrade Existing Projects</h2>
+<p>To upgrade existing projects which use the old <strong>NetOffice.*</strong> (eg. <strong>NetOffice.Word</strong>, <strong>NetOffice.Excel</strong>, etc.) packages from NuGet,
+you must manually uninstall these packages and get the new equivalent versions named <strong>NetOfficeFw.*</strong>.</p>
+<h2 id="use-package-manager-console-to-migrate-packages">Use Package Manager Console to Migrate Packages</h2>
+<p>You can use <strong>Package Manager</strong> in <strong>Visual Studio</strong> to migrate to new packages
+by using these commands:</p>
+<pre><code>PM&gt; Uninstall-Package NetOffice.Word
+PM&gt; Uninstall-Package NetOffice.Core
+PM&gt; Install-Package NetOfficeFw.Word
+</code></pre><h2 id="use-nuget-package-manager-to-migrate-packages">Use NuGet Package Manager to Migrate Packages</h2>
+<p>To migrate to <strong>NetOfficeFw</strong> packages from Visual Studio user interface,
+use NuGet Package Manager.</p>
+<ol>
+<li>Right click on you project and choose <strong>Manage NuGet Packages...</strong></li>
+<li>Open <strong>Installed</strong> tab</li>
+<li>Select your installed <strong>NetOffice</strong> packages</li>
+<li>Click <strong>Uninstall</strong> button</li>
+<li>Open <strong>Browse</strong> tab</li>
+<li>Enter <strong>netofficefw</strong> into search box</li>
+<li>Select the packages based on the MS Office application you develop for</li>
+<li>Click <strong>Install</strong> button</li>
+</ol>
+<blockquote>
+<p><em>Note:</em> Please, make sure you uninstall all existing NetOffice.<em> packages, including <em>*NetOffice.Core</em></em>
+to prevent issues in the application caused by referencing NetOffice libraries twice and
+with different versions.</p>
 </blockquote>
-
-<h2 id="features">Features</h2>
-<ul>
-<li>Microsoft Office integration without version limitations</li>
-<li>All features of Microsoft Office versions 2000, 2002, 2003, 2007, 2010, 2013 and 2016 are included</li>
-<li>Active support in version independent development</li>
-<li>Syntactically and semantically identical to the Microsoft Interop Assemblies</li>
-<li>No training if you already know the MS Office object model, use your existing PIA code</li>
-<li>Reduced and more readable code with automatic management of COM proxies</li>
-<li>Usable with .NET version 2.0 or higher</li>
-<li>Easy add-in development</li>
-<li>No deployment hurdles, no registration</li>
-<li>No dependencies, no Interop Assemblies, no need for VSTO</li>
-<li>Visual Studio Project Templates and Wizards available</li>
-</ul>
+<p><img src="nuget-vs-uninstall.jpg" width="1051" alt="Uninstall NetOffice packages"></p>
+<p><img src="nuget-vs-install.jpg" width="1048" alt="Install NetOfficeFw packages"></p>
 
           </article>
         </div>
