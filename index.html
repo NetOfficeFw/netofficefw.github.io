@@ -66,31 +66,52 @@
       <div class="usa-grid grid-right">
         <div class="col-md-10">
           <article class="content wrap" id="_content" data-uid="">
-              <h2 id="getting-started">Getting Started</h2>
-<p>Install NetOffice Framework as a NuGet package (<a href="https://www.nuget.org/profiles/netoffice">list of all NetOfficeFw packages</a>)
-into you Visual Studio project and develop Microsoft Office solution.</p>
-<pre><code>PM&gt; Install-Package NetOfficeFw.Word
-</code></pre><blockquote class="notice">
-<strong>Notice:</strong> Do not use the rogue release of NetOffice.Core package 1.7.4.4.
-<a href="migrate-notice">How to migrate?</a><br>
-<br>
-Official NetOffice libraries use new <strong>NetOfficeFw</strong> prefix and are published by official NuGet account named <a href="https://www.nuget.org/profiles/netoffice">netoffice</a>.
-</blockquote>
+              <div class="usa-grid-full usa-section">
+  <div class="usa-width-one-half">
 
-<h2 id="features">Features</h2>
-<ul>
-<li>Microsoft Office integration without version limitations</li>
-<li>All features of Microsoft Office versions 2000, 2002, 2003, 2007, 2010, 2013 and 2016 are included</li>
-<li>Active support in version independent development</li>
-<li>Syntactically and semantically identical to the Microsoft Interop Assemblies</li>
-<li>No training if you already know the MS Office object model, use your existing PIA code</li>
-<li>Reduced and more readable code with automatic management of COM proxies</li>
-<li>Usable with .NET version 2.0 or higher</li>
-<li>Easy add-in development</li>
-<li>No deployment hurdles, no registration</li>
-<li>No dependencies, no Interop Assemblies, no need for VSTO</li>
-<li>Visual Studio Project Templates and Wizards available</li>
-</ul>
+
+  <h2>Getting Started</h2>
+
+  <p>Install NetOffice Framework as a NuGet package (<a href="https://www.nuget.org/profiles/netoffice">list of all NetOfficeFw packages</a>)
+    into you Visual Studio project and develop Microsoft Office solution.</p>
+
+  <div class="code-block">
+    <div class="code-block-header">
+      <span class="language">Package Manager</span>
+    </div>
+    <div class="code-block-body">
+      <pre>PM&gt; Install-Package NetOfficeFw.Word
+PM&gt; Install-Package NetOfficeFw.Word -Version 1.7.3</pre>
+    </div>
+  </div>
+
+<div class="notice">
+    <strong>Notice:</strong> Using NetOffice.Core packages 1.7.4.4?
+    <a href="migrate-notice">Learn how to migrate.</a><br>
+    <br>
+    Official NetOffice libraries use new <strong>NetOfficeFw</strong> prefix and are published by official NuGet account named <a href="https://www.nuget.org/profiles/netoffice">netoffice</a>.
+</div>
+</div>
+
+<div class="usa-width-one-half">
+
+
+  <h2 id="features">Features</h2>
+    <ul>
+        <li>Microsoft Office integration without version limitations</li>
+        <li>All features of Microsoft Office versions 2010, 2013 and 2016 are included</li>
+        <li>Active support in version independent development</li>
+        <li>Syntactically and semantically identical to the Microsoft Interop Assemblies</li>
+        <li>No training if you already know the MS Office object model</li>
+        <li>More readable code with automatic management of COM proxies</li>
+        <li>Usable with .NET version 4.0 or higher</li>
+        <li>Easy add-in development</li>
+        <li>No deployment hurdles, no registration</li>
+        <li>No dependencies, no Interop Assemblies, no need for VSTO</li>
+        <li>Visual Studio Project Templates and Wizards available</li>
+    </ul>
+</div>
+</div>
 
           </article>
         </div>
@@ -133,7 +154,7 @@ Official NetOffice libraries use new <strong>NetOfficeFw</strong> prefix and are
       <div class="footer-section-bottom">
         <div class="usa-grid">
           <p>
-            Copyright © 2016-2017 NetOffice Framework. Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+            Copyright © 2016-2018 NetOffice Framework. Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
             <a class="usa-link-github" href="https://github.com/NetOfficeFw">
               <span>https://github.com/NetOfficeFw</span>
             </a>
