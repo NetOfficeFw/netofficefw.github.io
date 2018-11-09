@@ -62,14 +62,14 @@
 <p><a href="../technical/">&lt;&lt; Back</a></p>
 <h2 id="performance">Performance</h2>
 <p>The following table lists results of three comparative perfomance tests of
-different access methods in .NET to Microsoft Office. All Tests have been made on a
-Windows 7 32-bit workstation (2.66GHZ. 3,25GB RAM) with Microsoft Excel 2010. You can
-find the source code to all tests online or in the directory <code>PerformanceTests</code>.</p>
+different access methods in .NET to Microsoft Office. All tests have been made on a
+Windows 7 64-bit workstation (Instal i5-6200U @ 2.30GHz, 16GB RAM) with Microsoft Excel 2013 (32-bit).
+You can find the source code to all tests in the <a href="https://github.com/NetOfficeFw/NetOffice/tree/develop/Tests/Performance%20Tests">NetOffice repository</a>.</p>
 <p><strong>Test1:</strong> Iterating over 5.000 cells, writing a test value.</p>
-<p><strong>Test2:</strong> Iterating over 10.000 cells, writing a test value. changing the
-font-face, changing the cell format and call of the BorderArround Method,</p>
-<p><strong>Test3:</strong> Iterating over 15.000 cells, writing a test value. changing the
-font-face, changing the cell format, changing the WrapText-property and adding a
+<p><strong>Test2:</strong> Iterating over 10.000 cells, writing a test value, changing the
+font-face, changing the cell format and call of the <code>BorderArround()</code> method.</p>
+<p><strong>Test3:</strong> Iterating over 15.000 cells, writing a test value, changing the
+font-face, changing the cell format, changing the <code>WrapText</code> property and adding a
 comment.</p>
 <p>All tests have been executed 10x and the average value has been noted in this table.</p>
 <table>
@@ -84,52 +84,57 @@ comment.</p>
 <tbody>
 <tr>
 <td>MS Interop Assemblies</td>
-<td>00:00:02.8820154</td>
-<td>00:00:25.9789228</td>
-<td>00:01:28.4552610</td>
+<td>00:00:05.0154000</td>
+<td>00:00:34.1967602</td>
+<td>00:01:39.3174006</td>
 </tr>
 <tr>
 <td>VisualBasic LateBinding</td>
-<td>00:00:02.9468967</td>
-<td>00:00:26.7264004</td>
-<td>00:01:29.0091273</td>
+<td>00:00:05.7564000</td>
+<td>00:00:38.4586802</td>
+<td>00:01:45.4887607</td>
 </tr>
 <tr>
 <td>Dynamics in C#</td>
-<td>00:00:02.6801315</td>
-<td>00:00:45.2283897</td>
-<td>00:02:11.2374746</td>
+<td>00:00:05.1460800</td>
+<td>00:00:51.1430403</td>
+<td>00:02:15.1067208</td>
 </tr>
 <tr>
-<td>NetOffice Release 1.2</td>
-<td>00:00:02.8579749</td>
-<td>00:00:26.3763757</td>
-<td>00:01:29.0284321</td>
+<td>NetOffice v1.7.3</td>
+<td>00:00:05.1667200</td>
+<td>00:00:36.7926002</td>
+<td>00:01:42.6464406</td>
 </tr>
 </tbody>
 </table>
-<h3 id="remarks">Remarks</h3>
-<p>As You can see, all result are very close together. The only exceptions
-are Dynamics in Test 2 and Test 3. How can these values be explained? In a
-managed environment (.NET) is the access via Latebinding slower than
-EarlyBinding, but this difference is not so significant as in an unmanagend
-environment. NetOffice and the Latebinding mechanism in Visual Basic level this
-slight difference through intelligent caching mechanisms, so that type
-information for COM proxies do not need to be requested more than once. This
-caching mechansim works type-based and ensures that type-information about a
-Range object in Excel is only request at first object access. This information
-can then be reused for other Range objects. With C# Dynamics this caching
-mechanism works instance-based, this means that when you use a dynamic in a
-local scope (e.g. a ForEach-loop) and this scope get destructed at the end of
-each single iteration, the dynamic variable is discarded together with its
-type-information. Because Test 2 and Test 3 declare and use local dynamic
-variables in a ForEach loop, which get discarded after every loop-cycle, we can
-see a significant performance penalty because the type-information has to be
-refetched in every loop-iteration.</p>
-<p>Additional Remarks: For at development time unknown types (e.g. Variants),
-additional information has to fetched at runtime in any case, in order to
-analyse these types. This procedure is in NetOffice also aided by a caching
-mechanism, but this can affect the performance slightly.</p>
+<h2 id="remarks">Remarks</h2>
+<p>All results are very close together when working with small number of calls
+to Microsoft Office API.</p>
+<p>In managed environment (.NET) the Latebinding access is slower than EarlyBinding,
+but this difference is not so significant as in an unmanaged environment.
+NetOffice and the Latebinding calling conventions in Visual Basic use caching
+mechanisms, so the type information for COM proxy objects do not need to be
+requested more than once. This caching mechanism works type-based and ensures
+that type-information about a <code>Range</code> object in MS Excel is only request at
+first object access. This information can then be reused for all other <code>Range</code>
+objects used later on.</p>
+<h2 id="dynamics-performance">Dynamics Performance</h2>
+<p>Using <em>Dynamics</em> to access Microsoft Office API is very easy. On the other hand,
+it provides the least optimal way of calling COM interfaces.</p>
+<p>Dynamic objects in C# will retain type information only for the actual
+instance of an object, so .NET must fetch type information each time
+a new object call COM interface.</p>
+<p>When you use a dynamic in a local scope (e.g. a loop) and this scope get destructed
+at the end of each single iteration, the dynamic object is discarded together
+with its type information. This makes the <strong>Test2</strong> and <strong>Test3</strong> really slow and they
+will use much more memory.
+In these tests, dynamics use local variables in a <code>foreach</code> loop, which are discarded
+after every loop-cycle. This causes significant performance penalty because the
+type information has to be refetched in every loop-iteration.</p>
+<p><strong>Note:</strong> For types unknown at development time (e.g. <em>Variants</em>),
+additional type information has to fetched at runtime.
+NetOffice will cache this information to improve the performance slightly.</p>
 
           </article>
         </div>
