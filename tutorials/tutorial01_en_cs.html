@@ -62,8 +62,8 @@
 <p>NetOffice manages COM proxies for you to avoid any kind of memory leaks
 and it makes sure the instance of the <code>Excel.Application</code> object is cleaned up.
 This shutdowns the <code>Excel.exe</code> process.</p>
-<pre><code class="hljs lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Tutorial01Main</span>(<span class="hljs-params"></span>)
-</span>{
+<pre><code class="hljs lang-csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Tutorial01Main</span>(<span class="hljs-params"></span>)</span>
+{
     <span class="hljs-comment">// start application</span>
     Excel.Application application = <span class="hljs-keyword">new</span> Excel.Application();
     application.DisplayAlerts = <span class="hljs-literal">false</span>;
