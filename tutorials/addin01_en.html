@@ -28,7 +28,7 @@
       
         <nav role="navigation" class="usa-nav">
           <button class="usa-nav-close">
-            <img src="/assets/img/close.svg" alt="close">
+            <img src="/images/close.svg" alt="close">
           </button>
       
           <ul class="site-nav-primary usa-nav-primary usa-accordion nav-level0">
@@ -63,16 +63,19 @@
 These applications are also named in old MSDN documentation as <strong>Office solutions</strong> or <strong>COM Add-ins for Microsoft Office</strong>.</p>
 <p>The create Office application add-in, create a class which extends from the <code>COMAddin</code> class
 provided by the NetOffice library.</p>
-<pre><code class="hljs lang-csharp">[<span class="hljs-meta">ProgId(<span class="hljs-meta-string">"ExcelAddinSample.Connect"</span>)</span>]
-[<span class="hljs-meta">Guid(<span class="hljs-meta-string">"CC85F97A-F409-4497-B2F2-A9581D4A2ED2"</span>)</span>]
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExcelAddin</span> : <span class="hljs-title">NetOffice</span>.<span class="hljs-title">ExcelApi</span>.<span class="hljs-title">Tools</span>.<span class="hljs-title">COMAddin</span>
+<pre><code class="hljs lang-csharp"><span class="hljs-keyword">using</span> NetOffice.ExcelApi.Tools;
+
+[<span class="hljs-meta">ComVisible(true)</span>]
+[<span class="hljs-meta">ProgId(<span class="hljs-meta-string">&quot;ExcelAddinSample.Connect&quot;</span>)</span>]
+[<span class="hljs-meta">Guid(<span class="hljs-meta-string">&quot;CC85F97A-F409-4497-B2F2-A9581D4A2ED2&quot;</span>)</span>]
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExcelAddin</span> : <span class="hljs-title">COMAddin</span>
 {
 
 }
 </code></pre>
 <p>You project can have multiple add-ins targeting different Microsoft Office applications.
 Each add-in class must have its unique <strong>ProgId</strong> and <strong>Guid</strong> values so it can be
-properly identified in COM infrastructure.</p>
+properly identified in COM infrastructure. Each add-in class must be visible to COM.</p>
 <h3 id="comaddin-classes">COMAddin Classes</h3>
 <p>NetOffice provides <code>COMAddin</code> classes for each Microsoft Office application.
 You will find the <code>COMAddin</code> class in the <code>Tools</code> namespace in each NetOffice
@@ -150,7 +153,7 @@ library for an Office application.</p>
       <div class="footer-section-bottom">
         <div class="usa-grid">
           <p>
-            Copyright © 2016-2018 NetOffice Framework. Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+            Copyright © 2016-2020 NetOffice Framework. Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
             <a class="usa-link-github" href="https://github.com/NetOfficeFw">
               <span>https://github.com/NetOfficeFw</span>
             </a>

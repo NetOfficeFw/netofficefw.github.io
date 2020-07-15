@@ -28,7 +28,7 @@
       
         <nav role="navigation" class="usa-nav">
           <button class="usa-nav-close">
-            <img src="/assets/img/close.svg" alt="close">
+            <img src="/images/close.svg" alt="close">
           </button>
       
           <ul class="site-nav-primary usa-nav-primary usa-accordion nav-level0">
@@ -76,10 +76,10 @@ NetOffice to access a COM Server. This example shows you how to use it.</p>
 
     <span class="hljs-comment">// we set the COMVariant ColorIndex from Font of our sample range</span>
     <span class="hljs-comment">// with the Invoker class</span>
-    Invoker.PropertySet(sampleRange.Font, <span class="hljs-string">"ColorIndex"</span>, <span class="hljs-number">1</span>);
+    Invoker.PropertySet(sampleRange.Font, <span class="hljs-string">&quot;ColorIndex&quot;</span>, <span class="hljs-number">1</span>);
 
     <span class="hljs-comment">// creates a native unmanaged COMProxy with the Invoker</span>
-    <span class="hljs-keyword">object</span> comProxy = Invoker.PropertyGet(application, <span class="hljs-string">"Workbooks"</span>);
+    <span class="hljs-keyword">object</span> comProxy = Invoker.PropertyGet(application, <span class="hljs-string">&quot;Workbooks&quot;</span>);
     Marshal.ReleaseComObject(comProxy);
 
     application.Quit();
@@ -129,7 +129,7 @@ NetOffice to access a COM Server. This example shows you how to use it.</p>
       <div class="footer-section-bottom">
         <div class="usa-grid">
           <p>
-            Copyright © 2016-2018 NetOffice Framework. Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+            Copyright © 2016-2020 NetOffice Framework. Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
             <a class="usa-link-github" href="https://github.com/NetOfficeFw">
               <span>https://github.com/NetOfficeFw</span>
             </a>

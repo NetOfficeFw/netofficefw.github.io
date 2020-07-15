@@ -28,7 +28,7 @@
       
         <nav role="navigation" class="usa-nav">
           <button class="usa-nav-close">
-            <img src="/assets/img/close.svg" alt="close">
+            <img src="/images/close.svg" alt="close">
           </button>
       
           <ul class="site-nav-primary usa-nav-primary usa-accordion nav-level0">
@@ -98,7 +98,7 @@ NetOffice offers you a static property and event handler for this.</p>
             <span class="hljs-comment">// start application</span>
             _application = <span class="hljs-keyword">new</span> Excel.Application();
             _application.DisplayAlerts = <span class="hljs-literal">false</span>;
-            buttonExcel.Text = <span class="hljs-string">"Quit Excel"</span>;
+            buttonExcel.Text = <span class="hljs-string">&quot;Quit Excel&quot;</span>;
             buttonWorkbook.Enabled = <span class="hljs-literal">true</span>;
             buttonAddins.Enabled = <span class="hljs-literal">true</span>;
             buttonAddRemoveWorkbook.Enabled = <span class="hljs-literal">true</span>;
@@ -109,7 +109,7 @@ NetOffice offers you a static property and event handler for this.</p>
             _application.Quit();
             _application.Dispose();
             _application = <span class="hljs-literal">null</span>;
-            buttonExcel.Text = <span class="hljs-string">"Start Excel"</span>;
+            buttonExcel.Text = <span class="hljs-string">&quot;Start Excel&quot;</span>;
             buttonWorkbook.Enabled = <span class="hljs-literal">false</span>;
             buttonAddins.Enabled = <span class="hljs-literal">false</span>;
             buttonAddRemoveWorkbook.Enabled = <span class="hljs-literal">false</span>;
@@ -156,10 +156,10 @@ NetOffice offers you a static property and event handler for this.</p>
 
         <span class="hljs-keyword">int</span> proxyCountAfterDispose = LateBindingApi.Core.Factory.ProxyCount;
 
-        <span class="hljs-keyword">string</span> message = <span class="hljs-keyword">string</span>.Format(<span class="hljs-string">"Method creates a new Workbook with 1 new Worksheet\r\n"</span> +
-                                            <span class="hljs-string">"ProxyCount before create is {0}\r\n"</span> +
-                                            <span class="hljs-string">"ProxyCount after create is {1}\r\n"</span> +
-                                            <span class="hljs-string">"ProxyCount after dispose Workbook is {2}"</span>, proxyCount, proxyCountAfterCreate, proxyCountAfterDispose);
+        <span class="hljs-keyword">string</span> message = <span class="hljs-keyword">string</span>.Format(<span class="hljs-string">&quot;Method creates a new Workbook with 1 new Worksheet\r\n&quot;</span> +
+                                            <span class="hljs-string">&quot;ProxyCount before create is {0}\r\n&quot;</span> +
+                                            <span class="hljs-string">&quot;ProxyCount after create is {1}\r\n&quot;</span> +
+                                            <span class="hljs-string">&quot;ProxyCount after dispose Workbook is {2}&quot;</span>, proxyCount, proxyCountAfterCreate, proxyCountAfterDispose);
 
         MessageBox.Show(message, <span class="hljs-keyword">this</span>.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
@@ -213,7 +213,7 @@ NetOffice offers you a static property and event handler for this.</p>
       <div class="footer-section-bottom">
         <div class="usa-grid">
           <p>
-            Copyright © 2016-2018 NetOffice Framework. Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+            Copyright © 2016-2020 NetOffice Framework. Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
             <a class="usa-link-github" href="https://github.com/NetOfficeFw">
               <span>https://github.com/NetOfficeFw</span>
             </a>
