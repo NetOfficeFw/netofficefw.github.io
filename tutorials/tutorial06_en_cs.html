@@ -79,9 +79,9 @@ have to fear you lose the COM Proxy management functions from NetOffice.</p>
     Excel.Style style = (Excel.Style)range.Style;
 
     <span class="hljs-comment">// variant types can be scalar types, another way to us is</span>
-    <span class="hljs-keyword">if</span> (range.Style <span class="hljs-keyword">is</span> <span class="hljs-keyword">string</span>)
+    <span class="hljs-keyword">if</span> (range.Style <span class="hljs-keyword">is</span> <span class="hljs-built_in">string</span>)
     {
-        <span class="hljs-keyword">string</span> myStyle = range.Style <span class="hljs-keyword">as</span> <span class="hljs-keyword">string</span>;
+        <span class="hljs-built_in">string</span> myStyle = range.Style <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span>;
     }
     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (range.Style <span class="hljs-keyword">is</span> Excel.Style)
     {

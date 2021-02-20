@@ -63,8 +63,8 @@
 property or method is available.
 This very important because not every property and/or method is available in all Microsoft
 Office versions.</p>
-<pre><code class="hljs lang-csharp"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">EntityIsAvailable</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> name</span>)</span>;
-<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">EntityIsAvailable</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> name, SupportEntityType searchType</span>)</span>;
+<pre><code class="hljs lang-csharp"><span class="hljs-function"><span class="hljs-built_in">bool</span> <span class="hljs-title">EntityIsAvailable</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> name</span>)</span>;
+<span class="hljs-function"><span class="hljs-built_in">bool</span> <span class="hljs-title">EntityIsAvailable</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> name, SupportEntityType searchType</span>)</span>;
 </code></pre>
 <p>This example shows you how to check if API is available in current Microsoft Office application.</p>
 <p>See chapter8 in technical documentation for more information.</p>
@@ -74,10 +74,10 @@ Office versions.</p>
    Excel.Application application = <span class="hljs-keyword">new</span> Excel.Application();
 
    <span class="hljs-comment">// check for support at runtime</span>
-   <span class="hljs-keyword">bool</span> enableLivePreviewSupport = application.EntityIsAvailable(<span class="hljs-string">&quot;EnableLivePreview&quot;</span>);
-   <span class="hljs-keyword">bool</span> openDatabaseSupport = application.Workbooks.EntityIsAvailable(<span class="hljs-string">&quot;OpenDatabase&quot;</span>);
+   <span class="hljs-built_in">bool</span> enableLivePreviewSupport = application.EntityIsAvailable(<span class="hljs-string">&quot;EnableLivePreview&quot;</span>);
+   <span class="hljs-built_in">bool</span> openDatabaseSupport = application.Workbooks.EntityIsAvailable(<span class="hljs-string">&quot;OpenDatabase&quot;</span>);
 
-   <span class="hljs-keyword">string</span> result = <span class="hljs-string">&quot;Excel Runtime Check: &quot;</span> + Environment.NewLine;
+   <span class="hljs-built_in">string</span> result = <span class="hljs-string">&quot;Excel Runtime Check: &quot;</span> + Environment.NewLine;
    result += <span class="hljs-string">&quot;Support EnableLivePreview: &quot;</span> + enableLivePreviewSupport.ToString() + Environment.NewLine;
    result += <span class="hljs-string">&quot;Support OpenDatabase:      &quot;</span> + openDatabaseSupport.ToString() + Environment.NewLine;
 

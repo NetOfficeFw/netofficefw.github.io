@@ -61,7 +61,7 @@
               <h1 id="observable-com-proxy-count">Observable COM Proxy Count</h1>
 <p>Sometimes it is very useful to know the count of open COM Proxy objects in your application.
 NetOffice offers you a static property and event handler for this.</p>
-<pre><code class="hljs lang-csharp"><span class="hljs-keyword">int</span> LateBindingApi.Core.Factory.ProxyCount;
+<pre><code class="hljs lang-csharp"><span class="hljs-built_in">int</span> LateBindingApi.Core.Factory.ProxyCount;
 <span class="hljs-keyword">event</span> LateBindingApi.Core.Factory.ProxyCountChanged;
 </code></pre>
 <pre><code class="hljs lang-csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Tutorial4</span>
@@ -78,7 +78,7 @@ NetOffice offers you a static property and event handler for this.</p>
         LateBindingApi.Core.Factory.ProxyCountChanged += <span class="hljs-keyword">new</span> Factory.ProxyCountChangedHandler(Factory_ProxyCountChanged);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Factory_ProxyCountChanged</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> proxyCount</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Factory_ProxyCountChanged</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> proxyCount</span>)</span>
     {
         <span class="hljs-keyword">if</span> (labelProxyCount.InvokeRequired)
         {
@@ -91,7 +91,7 @@ NetOffice offers you a static property and event handler for this.</p>
         }
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonExcel_Click</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonExcel_Click</span>(<span class="hljs-params"><span class="hljs-built_in">object</span> sender, EventArgs e</span>)</span>
     {
         <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> == _application)
         {
@@ -116,7 +116,7 @@ NetOffice offers you a static property and event handler for this.</p>
         }
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonWorkbook_Click</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonWorkbook_Click</span>(<span class="hljs-params"><span class="hljs-built_in">object</span> sender, EventArgs e</span>)</span>
     {
         <span class="hljs-comment">// 2 new proxies, the workbooks proxy(implicit) and the new workbook from Add()</span>
         <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != _application)
@@ -125,7 +125,7 @@ NetOffice offers you a static property and event handler for this.</p>
         }
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonAddins_Click</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonAddins_Click</span>(<span class="hljs-params"><span class="hljs-built_in">object</span> sender, EventArgs e</span>)</span>
     {
         <span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != _application)
         {
@@ -137,26 +137,26 @@ NetOffice offers you a static property and event handler for this.</p>
         }
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonAddRemoveWorkbook_Click</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, EventArgs e</span>)</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buttonAddRemoveWorkbook_Click</span>(<span class="hljs-params"><span class="hljs-built_in">object</span> sender, EventArgs e</span>)</span>
     {
         <span class="hljs-comment">// add a new workbook and a new worksheet to the workbook</span>
         <span class="hljs-comment">// the worksheet is a child proxy from workbook, after dispose the workbook</span>
         <span class="hljs-comment">// creates 4 new proxies</span>
         <span class="hljs-comment">// the open proxy count is the same as before</span>
 
-        <span class="hljs-keyword">int</span> proxyCount = LateBindingApi.Core.Factory.ProxyCount;
+        <span class="hljs-built_in">int</span> proxyCount = LateBindingApi.Core.Factory.ProxyCount;
 
         Excel.Workbook book = _application.Workbooks.Add();
         book.Worksheets.Add();
 
-        <span class="hljs-keyword">int</span> proxyCountAfterCreate = LateBindingApi.Core.Factory.ProxyCount;
+        <span class="hljs-built_in">int</span> proxyCountAfterCreate = LateBindingApi.Core.Factory.ProxyCount;
 
         <span class="hljs-comment">// dispose all child instances from application</span>
         _application.DisposeChildInstances();
 
-        <span class="hljs-keyword">int</span> proxyCountAfterDispose = LateBindingApi.Core.Factory.ProxyCount;
+        <span class="hljs-built_in">int</span> proxyCountAfterDispose = LateBindingApi.Core.Factory.ProxyCount;
 
-        <span class="hljs-keyword">string</span> message = <span class="hljs-keyword">string</span>.Format(<span class="hljs-string">&quot;Method creates a new Workbook with 1 new Worksheet\r\n&quot;</span> +
+        <span class="hljs-built_in">string</span> message = <span class="hljs-built_in">string</span>.Format(<span class="hljs-string">&quot;Method creates a new Workbook with 1 new Worksheet\r\n&quot;</span> +
                                             <span class="hljs-string">&quot;ProxyCount before create is {0}\r\n&quot;</span> +
                                             <span class="hljs-string">&quot;ProxyCount after create is {1}\r\n&quot;</span> +
                                             <span class="hljs-string">&quot;ProxyCount after dispose Workbook is {2}&quot;</span>, proxyCount, proxyCountAfterCreate, proxyCountAfterDispose);
@@ -166,7 +166,7 @@ NetOffice offers you a static property and event handler for this.</p>
 
     <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">UpdateLabel</span>(<span class="hljs-params"></span>)</span>
     {
-        labelProxyCount.Text = labelProxyCount.Tag <span class="hljs-keyword">as</span> <span class="hljs-keyword">string</span>;
+        labelProxyCount.Text = labelProxyCount.Tag <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span>;
     }
 }
 </code></pre>

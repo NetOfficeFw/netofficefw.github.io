@@ -79,7 +79,7 @@ NetOffice to access a COM Server. This example shows you how to use it.</p>
     Invoker.PropertySet(sampleRange.Font, <span class="hljs-string">&quot;ColorIndex&quot;</span>, <span class="hljs-number">1</span>);
 
     <span class="hljs-comment">// creates a native unmanaged COMProxy with the Invoker</span>
-    <span class="hljs-keyword">object</span> comProxy = Invoker.PropertyGet(application, <span class="hljs-string">&quot;Workbooks&quot;</span>);
+    <span class="hljs-built_in">object</span> comProxy = Invoker.PropertyGet(application, <span class="hljs-string">&quot;Workbooks&quot;</span>);
     Marshal.ReleaseComObject(comProxy);
 
     application.Quit();

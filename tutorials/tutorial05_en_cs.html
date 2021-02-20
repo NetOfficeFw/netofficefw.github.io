@@ -84,9 +84,9 @@ CoClasses or Interfaces and also the type for anonymous COM Proxy objects at des
     }
 
     <span class="hljs-comment">// 3 basic properties of COMObject</span>
-    <span class="hljs-keyword">object</span> proxy          = sheet.UnderlyingObject;
-    <span class="hljs-keyword">string</span> proxyClassName = sheet.UnderlyingTypeName;
-    <span class="hljs-keyword">bool</span>   isDisposed     = sheet.IsDisposed;
+    <span class="hljs-built_in">object</span> proxy          = sheet.UnderlyingObject;
+    <span class="hljs-built_in">string</span> proxyClassName = sheet.UnderlyingTypeName;
+    <span class="hljs-built_in">bool</span>   isDisposed     = sheet.IsDisposed;
 
     application.Quit();
     application.Dispose();
