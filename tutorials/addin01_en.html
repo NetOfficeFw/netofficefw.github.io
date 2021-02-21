@@ -6,6 +6,7 @@
   <title>Microsoft Office Add-ins using NetOffice | NetOffice Framework</title>
   <meta name="viewport" content="width=device-width">
   
+  <meta http-equiv="refresh" content="10; URL=/addins/">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/styles/vendor.min.css">
   <link rel="stylesheet" href="/styles/main.min.css">
@@ -35,6 +36,9 @@
       
           <ul class="site-nav-primary usa-nav-primary usa-accordion nav-level0">
             <li>
+              <a href="/addins/" title="Office Add-ins" class="usa-nav-link">Office Add-ins</a>
+            </li>
+            <li>
               <a href="/tutorials/" title="Tutorials" class="usa-nav-link usa-current">Tutorials</a>
             </li>
             <li>
@@ -44,7 +48,15 @@
               <a href="/documentation/" title="Documentation" class="usa-nav-link">Documentation</a>
             </li>
             <li class="nav-link-github-star-button">
-              <a class="github-button" href="https://github.com/NetOfficeFw/NetOffice" title="Star NetOfficeFw on GitHub" data-text="Star" data-icon="octicon-star" data-show-count="true" aria-label="Star NetOfficeFw/NetOffice on GitHub">Star NetOfficeFw on GitHub</a>
+              <div class="widget">
+                <a class="btn" href="https://github.com/NetOfficeFw/NetOffice" rel="noopener" target="_blank" title="Star NetOfficeFw on GitHub" aria-label="Star NetOfficeFw/NetOffice on GitHub">
+                  <svg viewBox="0 0 16 16" width="14" height="14" class="octicon octicon-star" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z">
+                    </path>
+                  </svg>
+                  <span>Star</span>
+                </a><a class="social-count" href="https://github.com/NetOfficeFw/NetOffice/stargazers" rel="noopener" target="_blank" aria-label="396 stargazers on GitHub">396</a>
+              </div>
             </li>
           </ul>
       
@@ -59,60 +71,8 @@
 
       <div class="usa-grid grid-right">
         <div class="col-md-10">
-          <article class="content wrap" id="_content" data-uid="addin01">
-              <h1 id="microsoft-office-add-ins-using-netoffice">Microsoft Office Add-ins using NetOffice</h1>
-<p>You can use the NetOffice library to create .NET Framework applications that extend Office.
-These applications are also named in old MSDN documentation as <strong>Office solutions</strong> or <strong>COM Add-ins for Microsoft Office</strong>.</p>
-<p>The create Office application add-in, create a class which extends from the <code>COMAddin</code> class
-provided by the NetOffice library.</p>
-<pre><code class="hljs lang-csharp"><span class="hljs-keyword">using</span> NetOffice.ExcelApi.Tools;
-
-[<span class="hljs-meta">ComVisible(true)</span>]
-[<span class="hljs-meta">ProgId(<span class="hljs-meta-string">&quot;ExcelAddinSample.Connect&quot;</span>)</span>]
-[<span class="hljs-meta">Guid(<span class="hljs-meta-string">&quot;CC85F97A-F409-4497-B2F2-A9581D4A2ED2&quot;</span>)</span>]
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExcelAddin</span> : <span class="hljs-title">COMAddin</span>
-{
-
-}
-</code></pre>
-<p>You project can have multiple add-ins targeting different Microsoft Office applications.
-Each add-in class must have its unique <strong>ProgId</strong> and <strong>Guid</strong> values so it can be
-properly identified in COM infrastructure. Each add-in class must be visible to COM.</p>
-<h3 id="comaddin-classes">COMAddin Classes</h3>
-<p>NetOffice provides <code>COMAddin</code> classes for each Microsoft Office application.
-You will find the <code>COMAddin</code> class in the <code>Tools</code> namespace in each NetOffice
-library for an Office application.</p>
-<table>
-<thead>
-<tr>
-<th>Office Application</th>
-<th>NetOffice Library</th>
-<th>COMAddin Class</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MS Word</td>
-<td>WordApi.dll</td>
-<td>NetOffice.WordApi.Tools.COMAddin</td>
-</tr>
-<tr>
-<td>MS Excel</td>
-<td>ExcelApi.dll</td>
-<td>NetOffice.ExcelApi.Tools.COMAddin</td>
-</tr>
-<tr>
-<td>MS PowerPoint</td>
-<td>PowerPointApi.dll</td>
-<td>NetOffice.PowerPointApi.Tools.COMAddin</td>
-</tr>
-<tr>
-<td>MS Outlook</td>
-<td>OutlookApi.dll</td>
-<td>NetOffice.OutlookApi.Tools.COMAddin</td>
-</tr>
-</tbody>
-</table>
+          <article class="content wrap" id="_content" data-uid="addin01_old">
+              <p><a href="/addins/">Content was moved to /addins/</a></p>
 
           </article>
         </div>

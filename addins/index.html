@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Tutorials | NetOffice Framework</title>
+  <title>Microsoft Office Add-ins using NetOffice | NetOffice Framework</title>
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="NetOffice Tutorials and Add-ins documentation">
+  
   
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/styles/vendor.min.css">
@@ -36,10 +36,10 @@
       
           <ul class="site-nav-primary usa-nav-primary usa-accordion nav-level0">
             <li>
-              <a href="/addins/" title="Office Add-ins" class="usa-nav-link">Office Add-ins</a>
+              <a href="/addins/" title="Office Add-ins" class="usa-nav-link usa-current">Office Add-ins</a>
             </li>
             <li>
-              <a href="/tutorials/" title="Tutorials" class="usa-nav-link usa-current">Tutorials</a>
+              <a href="/tutorials/" title="Tutorials" class="usa-nav-link">Tutorials</a>
             </li>
             <li>
               <a href="/toolbox/" title="Toolbox" class="usa-nav-link">Toolbox</a>
@@ -71,25 +71,76 @@
 
       <div class="usa-grid grid-right">
         <div class="col-md-10">
-          <article class="content wrap" id="_content" data-uid="">
-              <h1 id="tutorials">Tutorials</h1>
-<p>Learn how to build Office Add-ins using NetOffice and study details about COM object in NetOffice.</p>
-<h2 id="netoffice-add-ins">NetOffice Add-ins</h2>
-<ol>
-<li><a href="../addins/">Microsoft Office Add-ins using NetOffice</a></li>
-</ol>
+          <article class="content wrap" id="_content" data-uid="addin01">
+              <h1 id="microsoft-office-add-ins-using-netoffice">Microsoft Office Add-ins using NetOffice</h1>
+<p>You can use the NetOffice library to create .NET Framework applications that extend Office.
+These applications are also named in old MSDN documentation as <strong>Office solutions</strong> or <strong>COM Add-ins for Microsoft Office</strong>.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Download our <a href="https://marketplace.visualstudio.com/items?itemName=NetOffice.tools">NetOffice extension</a> from the <a href="https://marketplace.visualstudio.com/items?itemName=NetOffice.tools">Visual Studio Marketplace</a>.</p>
+<p>In the <strong>Create new project</strong> dialog search for NetOffice and select a template based
+on the Microsoft Office application you want to extend.</p>
+<p><img src="../images/netoffice_extension_create_project.png" width="768" height="510" alt="Create new project - NetOffice add-in templates"></p>
+<p>Look for the <code>MyAddin</code> class in the project. Use the <code>MyAddin_OnConnection</code> method
+to add handlers for the events provided by Office application.</p>
+<pre><code class="hljs lang-csharp"><span class="hljs-keyword">using</span> NetOffice.ExcelApi.Tools;
 
-<h2 id="netoffice-tutorials">NetOffice Tutorials</h2>
-<ol>
-<li><a href="tutorial01_en_cs.html">Understand COM Proxy Management</a></li>
-<li><a href="tutorial02_en_cs.html">Efficient using Dispose</a></li>
-<li><a href="tutorial03_en_cs.html">Using Dispose with event exporting Objects</a></li>
-<li><a href="tutorial04_en_cs.html">Observable COM Proxy Count</a></li>
-<li><a href="tutorial05_en_cs.html">Understanding COMObject</a></li>
-<li><a href="tutorial06_en_cs.html">Understand Variant Type</a></li>
-<li><a href="tutorial07_en_cs.html">Invoker</a></li>
-<li><a href="tutorial08_en_cs.html">Check for a specific entity support at runtime</a></li>
-</ol>
+[<span class="hljs-meta">ComVisible(true)</span>]
+[<span class="hljs-meta">ProgId(<span class="hljs-meta-string">&quot;ExcelAddinSample.MyAddin&quot;</span>)</span>]
+[<span class="hljs-meta">Guid(<span class="hljs-meta-string">&quot;CC85F97A-F409-4497-B2F2-A9581D4A2ED2&quot;</span>)</span>]
+[<span class="hljs-meta">COMAddin(<span class="hljs-meta-string">&quot;MyAddin&quot;</span>, <span class="hljs-meta-string">&quot;Addin description.&quot;</span>, LoadBehavior.LoadAtStartup)</span>]
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyAddin</span> : <span class="hljs-title">COMAddin</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">MyAddin_OnConnection</span>(<span class="hljs-params"><span class="hljs-built_in">object</span> application, ext_ConnectMode connectMode, <span class="hljs-built_in">object</span> addInInst, <span class="hljs-keyword">ref</span> Array custom</span>)</span>
+    {
+        <span class="hljs-keyword">this</span>.Application.WorkbookOpenEvent += Application_WorkbookOpenEvent;
+    }
+}
+</code></pre>
+<h2 id="advanced-add-ins">Advanced Add-ins</h2>
+<p>You project can have multiple add-ins targeting different Microsoft Office applications.</p>
+<p>Each add-in class which extends <code>COMAddin</code> must have its unique <strong>[ProgId]</strong> and <strong>[Guid]</strong> values so it can be
+properly identified in COM infrastructure. Each add-in class must have the <strong>[ComVisible(true)]</strong> attribute.</p>
+<p>Add-in classes must extends from the <code>COMAddin</code> class provided by the NetOffice library.</p>
+<h3 id="comaddin-classes">COMAddin Classes</h3>
+<p>NetOffice provides <code>COMAddin</code> classes for each Microsoft Office application.
+You will find the <code>COMAddin</code> class in the <code>Tools</code> namespace in each NetOffice
+library for an Office application.</p>
+<table>
+<thead>
+<tr>
+<th>Office Application</th>
+<th>NetOffice package</th>
+<th>Link</th>
+<th>COMAddin Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MS Word</td>
+<td><code>NetOfficeFw.Word</code></td>
+<td><a href="https://www.nuget.org/packages/NetOfficeFw.Word/"><img src="https://img.shields.io/nuget/v/netofficefw.word?color=%232B579A&amp;label=&amp;logo=microsoft-word&amp;style=flat-square" alt="NetOfficeFw.Word"></a></td>
+<td><code>NetOffice.WordApi.Tools.COMAddin</code></td>
+</tr>
+<tr>
+<td>MS Excel</td>
+<td><code>NetOfficeFw.Excel</code></td>
+<td><a href="https://www.nuget.org/packages/NetOfficeFw.Excel/"><img src="https://img.shields.io/nuget/v/netofficefw.excel?color=%23217346&amp;label=&amp;logo=microsoft-excel&amp;style=flat-square" alt="NetOfficeFw.Excel"></a></td>
+<td><code>NetOffice.ExcelApi.Tools.COMAddin</code></td>
+</tr>
+<tr>
+<td>MS PowerPoint</td>
+<td><code>NetOfficeFw.PowerPoint</code></td>
+<td><a href="https://www.nuget.org/packages/NetOfficeFw.Powerpoint/"><img src="https://img.shields.io/nuget/v/netofficefw.powerpoint?color=%23B7472A&amp;label=&amp;logo=microsoft-powerpoint&amp;style=flat-square" alt="NetOfficeFw.Powerpoint"></a></td>
+<td><code>NetOffice.PowerPointApi.Tools.COMAddin</code></td>
+</tr>
+<tr>
+<td>MS Outlook</td>
+<td><code>NetOfficeFw.Outlook</code></td>
+<td><a href="https://www.nuget.org/packages/NetOfficeFw.Outlook/"><img src="https://img.shields.io/nuget/v/netofficefw.outlook?color=%230078D4&amp;label=&amp;logo=microsoft-outlook&amp;style=flat-square" alt="NetOfficeFw.Outlook"></a></td>
+<td><code>NetOffice.OutlookApi.Tools.COMAddin</code></td>
+</tr>
+</tbody>
+</table>
 
           </article>
         </div>

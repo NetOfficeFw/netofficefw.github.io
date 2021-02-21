@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>NetOffice Framework</title>
+  <title>Use latest NetOfficeFw packages | NetOffice Framework</title>
   <meta name="viewport" content="width=device-width">
+  
   
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/styles/vendor.min.css">
@@ -35,6 +36,9 @@
       
           <ul class="site-nav-primary usa-nav-primary usa-accordion nav-level0">
             <li>
+              <a href="/addins/" title="Office Add-ins" class="usa-nav-link">Office Add-ins</a>
+            </li>
+            <li>
               <a href="/tutorials/" title="Tutorials" class="usa-nav-link">Tutorials</a>
             </li>
             <li>
@@ -44,7 +48,15 @@
               <a href="/documentation/" title="Documentation" class="usa-nav-link">Documentation</a>
             </li>
             <li class="nav-link-github-star-button">
-              <a class="github-button" href="https://github.com/NetOfficeFw/NetOffice" title="Star NetOfficeFw on GitHub" data-text="Star" data-icon="octicon-star" data-show-count="true" aria-label="Star NetOfficeFw/NetOffice on GitHub">Star NetOfficeFw on GitHub</a>
+              <div class="widget">
+                <a class="btn" href="https://github.com/NetOfficeFw/NetOffice" rel="noopener" target="_blank" title="Star NetOfficeFw on GitHub" aria-label="Star NetOfficeFw/NetOffice on GitHub">
+                  <svg viewBox="0 0 16 16" width="14" height="14" class="octicon octicon-star" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z">
+                    </path>
+                  </svg>
+                  <span>Star</span>
+                </a><a class="social-count" href="https://github.com/NetOfficeFw/NetOffice/stargazers" rel="noopener" target="_blank" aria-label="396 stargazers on GitHub">396</a>
+              </div>
             </li>
           </ul>
       
@@ -59,8 +71,8 @@
       <div class="usa-hero">
           <div class="usa-grid">
           <div class="usa-hero-callout usa-section-dark">
-            <h2><span class="usa-hero-callout-alt">❗ Use NetOfficeFw packages</span></h2>
-            <p><img class="reserved-indicator" src="https://www.nuget.org/Content/gallery/img/reserved-indicator.svg" alt="indicator of official NuGet packages" width="24" title="Look for ID prefix indicator"> Official <strong>NetOfficeFw.*</strong> packages are verified and signed.</p>
+            <h2><span class="usa-hero-callout-alt">💬 Migrate to latest NetOfficeFw packages</span></h2>
+            <p>Use our official <strong>NetOfficeFw</strong> packages. They are verified and signed.</p>
           </div>
         </div>
       </div>
@@ -68,26 +80,25 @@
       <div class="usa-grid grid-right">
         <div class="col-md-10">
           <article class="content wrap" id="_content" data-uid="">
-              <h2 id="move-away-from-old-packages">Move Away From Old Packages</h2>
-<p>We noticed that old NetOffice packages on NuGet server are no longer available
-(NetOffice releases 1.7.3 and older) and a rogue account named <em>netofficedotnet</em>
-published NetOffice libraries under a release 1.7.4.4 and 1.7.4.11.
-These packages contain the old NetOffice 1.7.3.0 libraries and in case of the latest releases,
-packages are unusable.</p>
-<p>Our <a href="https://www.nuget.org/profiles/netoffice">official NetOffice release</a> is <strong>1.8.1</strong> (as of February 2021).</p>
-<p>By using <strong>NetOfficeFw</strong> packages you will get the latest NetOffice libraries
-and also improved debugging experience as we publish symbol packages with
-the source code for the <strong>1.7.4.x</strong> and <strong>1.7.5</strong> releases.</p>
-<h2 id="upgrade-existing-projects">Upgrade Existing Projects</h2>
-<p>To upgrade existing projects which use the old <strong>NetOffice.*</strong> (eg. <strong>NetOffice.Word</strong>, <strong>NetOffice.Excel</strong>, <strong>NetOffice.Outlook</strong> and others) packages from NuGet,
+              <h1 id="use-latest-netofficefw-packages">Use latest NetOfficeFw packages</h1>
+<p>By using <strong>NetOfficeFw</strong> packages you will get our latest NetOffice libraries. Our packages are
+digitally signed and their source code is available.</p>
+<p>Official packages have new features, several bugfixes and have great debugging experience.</p>
+<p>To upgrade existing projects which use the old <strong>NetOffice.*</strong> packages from NuGet (eg. <strong>NetOffice.Word</strong>, <strong>NetOffice.Excel</strong>, <strong>NetOffice.Outlook</strong> and others),
 you must manually uninstall these packages and get the new equivalent versions named <strong>NetOfficeFw.*</strong>.</p>
-<h2 id="use-package-manager-console-to-migrate-packages">Use Package Manager Console to Migrate Packages</h2>
+<p>Our <a href="https://www.nuget.org/profiles/netoffice">official NetOffice release</a> is <strong>1.8.1</strong> (as of February 2021).</p>
+<h2 id="move-away-from-old-packages">Move away from old packages</h2>
+<p>We noticed a rogue account named <em>netofficedotnet</em> published NetOffice on NuGet in releases 1.7.4.4 and 1.7.4.11.
+Those packages contain old NetOffice libraries which does not work correctly.
+Please, check your projects for any packages published by <em>netofficedotnet</em> or by <em>Erika LeBlanc</em>.</p>
+<p>Use this guide to migrate to official NetOfficeFw packages.</p>
+<h3 id="use-package-manager-console-to-migrate-packages">Use Package Manager Console to migrate packages</h3>
 <p>You can use <strong>Package Manager</strong> in <strong>Visual Studio</strong> to migrate to new packages
-by using these commands:</p>
+by using these commands (sample for Word package):</p>
 <pre><code>PM&gt; Uninstall-Package NetOffice.Word
 PM&gt; Uninstall-Package NetOffice.Core
 PM&gt; Install-Package NetOfficeFw.Word
-</code></pre><h2 id="use-nuget-package-manager-to-migrate-packages">Use NuGet Package Manager to Migrate Packages</h2>
+</code></pre><h3 id="use-nuget-package-manager-to-migrate-packages">Use NuGet Package Manager to migrate packages</h3>
 <p>To migrate to <strong>NetOfficeFw</strong> packages from Visual Studio user interface,
 use NuGet Package Manager.</p>
 <ol>
